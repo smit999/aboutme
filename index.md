@@ -159,6 +159,3 @@ LDRP- ITR • Gandhinagar, GUJ, IN • **2017** **•** 3.5 GPA
 
 *Cloud:* **Microsoft** **Azure(AZ-900 Certification)**, *AWS (Amazon Web*
       *Services)*, GCP
-
-
-<a href="/downloads/SMIT_PATEL.docx.docx" class="btn btn-download">Download Resume</a>
