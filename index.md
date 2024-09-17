@@ -9,7 +9,7 @@ title: SMIT PATEL
 
 **•** Boston, MA, US **•** <skpatel0211@gmail.com> **•** 7816008208
 **•** [in/smit999](http://www.linkedin.com/in/smit999) **•**
-github.com/smit999 **•** Proven Quick Learner • Citizen - USA
+github.com/smit999(https://github.com/smit999/) **•** Proven Quick Learner • Citizen - USA
 
 **EXPERIENCE**
 
@@ -94,7 +94,7 @@ github.com/smit999 **•** Proven Quick Learner • Citizen - USA
 
 **Assoc. Software Developer**
 
-**Acespritech Pvt. Ltd. October 2017 -- September 2018, Gandhinagar,
+**Acespritech Pvt. Ltd. October 2017 -- September 2019, Gandhinagar,
 Gujarat, IN**
 
 - Excelled in the creation of application components utilizing advanced
@@ -111,12 +111,12 @@ Gujarat, IN**
 **Predict Facial Expression using ML**
 
 - Engineered an innovative facial expression recognition system using
-  Keras and OpenCV, integrating a CNN architecture that enhanced model
+  **Keras** and **OpenCV**, integrating a CNN architecture that enhanced model
   training efficiency; deployed as a user-friendly web application
   through Python and Flask.
 
-- Leveraged advanced machine learning libraries (Sci-kit learn,
-  Pandas, 1) to refine data analysis, achieving a significant model
+- Leveraged advanced machine learning libraries (**Sci-kit** learn,
+  **Pandas**) to refine data analysis, achieving a significant model
   accuracy milestone of 76%, and implemented strategic face-cropping
   algorithms to bolster prediction precision.
 
@@ -147,14 +147,18 @@ LDRP- ITR • Gandhinagar, GUJ, IN • **2017** **•** 3.5 GPA
 
 *Technologies (Front End):* **HTML, CSS**, **JavaScript**
 
-*Frameworks:* **REST, Django, Flask**, .NET, **Spring boot**, React,
-Node.js, AngularJS, TypeScript, **Kubernetes, Behave (BDD)**
+*Frameworks:* **REST, Django, Flask**, .NET, **Spring boot**, *React*,
+            *Node.js*, **TypeScript**, **Kubernetes, Behave (BDD)**,
+            **Playwrite**
 
-*Tools:* **Git, Jenkins, GitHub Actions, Docker**, Terraform, **Linux
-CLI**, **MS Office**, Apache Airflow, **PyCharm, IntelliJ**, **Pip,
-Poetry**
+*Tools/Libraries:* **Git, Jenkins, GitHub Actions, Docker**, Terraform, **Linux**
+       **CLI**, **MS Office**, Apache Airflow, **PyCharm, IntelliJ**, **Pip**,
+       **Poetry**, **VSCode**, Hugging Face, Pandas, Sci-kit Learn, Keras, Oven CV
 
 *Databases:* **MySQL**, PostgreSQL, **Snowflake**, **MongoDB, SQL**
 
-*Cloud:* **Microsoft** **Azure(AZ-900 Certification)**, AWS (Amazon Web
-Services), GCP
+*Cloud:* **Microsoft** **Azure(AZ-900 Certification)**, *AWS (Amazon Web*
+      *Services)*, GCP
+
+
+<a href="/downloads/SMIT_PATEL.docx.docx" class="btn btn-download">Download Resume</a>
