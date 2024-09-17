@@ -1,3 +1,10 @@
+---
+layout: default
+title: SMIT PATEL
+---
+
+{% include_relative README.md %}
+
 **SMIT PATEL**
 
 **•** Boston, MA, US **•** <skpatel0211@gmail.com> **•** 7816008208

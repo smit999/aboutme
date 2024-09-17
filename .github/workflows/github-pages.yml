@@ -1,23 +1,37 @@
-name: Deploy Resume to GitHub Pages
+name: Build and Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - main  # or your default branch
+      - main  # Change if your default branch is different
 
 jobs:
-  deploy:
+  build-deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Copy README.md to index.md
-        run: cp README.md index.md
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'  # Use a supported Ruby version
+
+      - name: Install Dependencies
+        run: |
+          gem install bundler
+          bundle config set path 'vendor/bundle'
+          echo "source 'https://rubygems.org'" > Gemfile
+          echo "gem 'github-pages', group: :jekyll_plugins" >> Gemfile
+          bundle install
+
+      - name: Build the Site
+        run: bundle exec jekyll build --destination ./build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
+          publish_dir: ./build
           publish_branch: gh-pages
