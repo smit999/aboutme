@@ -122,14 +122,9 @@ Gujarat, IN**
 
 **Online Pizza Ordering Web App**
 
-- Pioneered a dynamic Online Pizza Ordering platform by architecting a
-  robust RESTful API server in PHP and JS, optimizing the end-to-end
-  ordering experience with real-time tracking capabilities for users.
+- Pioneered a dynamic Online Pizza Ordering platform by architecting a robust RESTful API server in PHP and JS, optimizing the end-to-end ordering experience with real-time tracking capabilities for users.
 
-- Orchestrated a comprehensive admin dashboard for order supervision and
-  streamlined pizza status updates, directly contributing to operational
-  efficiency and improved order management via a MySQL database
-  integration.
+- Orchestrated a comprehensive admin dashboard for order supervision and streamlined pizza status updates, directly contributing to operational efficiency and improved order management via a MySQL database integration.
 
 **EDUCATION**
 
