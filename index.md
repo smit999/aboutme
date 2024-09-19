@@ -9,7 +9,7 @@ title: SMIT PATEL
 
 **•** Boston, MA, US **•** <skpatel0211@gmail.com> **•** 7816008208
 **•** [in/smit999](http://www.linkedin.com/in/smit999) **•**
-github.com/smit999(https://github.com/smit999/) **•** Proven Quick Learner • Citizen - USA
+[github.com/smit999](https://github.com/smit999/) **•** Proven Quick Learner • Citizen - USA
 
 **EXPERIENCE**
 
