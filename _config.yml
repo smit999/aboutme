@@ -1,5 +1,4 @@
 title: My Resume
 description: A site showcasing my Resume
 theme: jekyll-theme-minimal  # Choose a theme you like
-baseurl: ""
 include: [downloads]
