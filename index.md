@@ -13,6 +13,11 @@ title: SMIT PATEL
 
 **EXPERIENCE**
 
+
+**DevOps Engineer**
+
+**IBM November 2024 -- Present, Lowell, MA, US**
+
 **Software Engineer**
 
 **Optum January 2023 -- Present, Boston, MA, US**
