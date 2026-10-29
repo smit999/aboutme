@@ -196,6 +196,14 @@ code {
   gap: 12px;
 }
 
+.brand-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1.5px solid var(--border-strong);
+}
+
 .brand-mark {
   width: 38px;
   height: 38px;
