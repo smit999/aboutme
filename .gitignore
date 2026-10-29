@@ -1,0 +1,11 @@
+# Windows / WSL Alternate Data Stream artifacts
+*:Zone.Identifier
+*?Zone.Identifier
+
+# Local browser test downloads saved to repo root
+/Smit_Patel_Resume*.pdf
+/Smit_Patel_Resume*.docx
+
+# OS & editor files
+.DS_Store
+Thumbs.db

@@ -24,6 +24,9 @@ jobs:
           test -f .nojekyll
           test -s assets/css/styles.css
           test -s assets/js/main.js
+          test -s assets/img/avatar.png
+          test -s assets/img/favicon.png
+          test -s assets/img/og-thumbnail.png
           test -s downloads/smit_patel.pdf
           test -s downloads/SMIT_PATEL.docx
 

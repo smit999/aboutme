@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="paper">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -24,19 +24,19 @@
   <link rel="icon" type="image/png" href="./assets/img/favicon.png" />
   <link rel="apple-touch-icon" href="./assets/img/avatar.png" />
 
-  <!-- Google Fonts -->
+  <!-- Editorial & Monospace Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;450;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="./assets/css/styles.css" />
 
-  <!-- Prevent flash of wrong theme -->
+  <!-- Restore saved theme prior to paint -->
   <script>
     (function () {
       try {
-        var saved = localStorage.getItem('sp-theme');
-        if (saved === 'light' || saved === 'dark') {
+        var saved = localStorage.getItem('sp-editorial-theme');
+        if (saved === 'paper' || saved === 'ink') {
           document.documentElement.setAttribute('data-theme', saved);
         }
       } catch (e) {}
@@ -50,6 +50,7 @@
     "@type": "Person",
     "name": "Smit Patel",
     "jobTitle": "Full Stack & Applied AI Software Engineer",
+    "image": "https://smit999.github.io/aboutme/assets/img/avatar.png",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Greater Boston Area",
@@ -62,12 +63,10 @@
       "https://www.linkedin.com/in/smit999",
       "https://github.com/smit999"
     ],
-    "alumniOf": [
-      {
-        "@type": "CollegeOrUniversity",
-        "name": "University of Massachusetts Boston"
-      }
-    ],
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "University of Massachusetts Boston"
+    },
     "worksFor": {
       "@type": "Organization",
       "name": "IBM"
@@ -76,730 +75,604 @@
   </script>
 </head>
 <body>
-  <!-- Ambient Background Glow -->
-  <div class="bg-glow" aria-hidden="true">
-    <div class="glow-orb orb-1"></div>
-    <div class="glow-orb orb-2"></div>
-    <div class="grid-overlay"></div>
-  </div>
+  <!-- Subtle Paper Grain Texture & Reading Progress Hairline -->
+  <div class="paper-grain" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
 
-  <!-- Sticky Navigation -->
-  <header class="site-header" id="top">
-    <div class="container nav-inner">
-      <a href="#top" class="brand" aria-label="Smit Patel Home">
-        <img src="./assets/img/avatar.png" alt="Smit Patel" class="brand-avatar" width="38" height="38" />
-        <span class="brand-text">
-          <span class="brand-name">Smit Patel</span>
-          <span class="brand-role">Full Stack &amp; Applied AI</span>
-        </span>
-      </a>
-
-      <nav class="site-nav" id="site-nav" aria-label="Primary Navigation">
-        <a href="#about" class="nav-link active">About</a>
-        <a href="#skills" class="nav-link">Skills</a>
-        <a href="#experience" class="nav-link">Experience</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#education" class="nav-link">Education</a>
-        <a href="#contact" class="nav-link">Contact</a>
-      </nav>
-
-      <div class="nav-actions">
-        <button type="button" class="icon-btn" id="theme-toggle" aria-label="Toggle color theme" title="Switch theme">
-          <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="4"></circle>
-            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
-          </svg>
-          <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>
-        </button>
-
-        <a href="./downloads/smit_patel.pdf" download="Smit_Patel_Resume.pdf" class="btn btn-primary btn-sm nav-resume-btn">
-          <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-            <polyline points="7 10 12 15 17 10"></polyline>
-            <line x1="12" y1="15" x2="12" y2="3"></line>
-          </svg>
-          <span>Resume</span>
-        </a>
-
-        <button type="button" class="icon-btn mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="site-nav">
-          <svg class="icon-menu" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-          </svg>
+  <!-- Top Editorial Masthead Strip -->
+  <header class="masthead" id="top">
+    <div class="masthead-inner">
+      <div class="masthead-left">
+        <span class="live-indicator" aria-hidden="true"></span>
+        <span class="mono-meta">VOL. 07 — GREATER BOSTON, MA · US CITIZEN</span>
+      </div>
+      <div class="masthead-right">
+        <span class="mono-meta hide-sm">IBM · OPTUM · TESLA</span>
+        <button type="button" class="theme-pill" id="theme-toggle" aria-label="Switch between Warm Paper and Evening Ink theme">
+          <span class="theme-swatch" aria-hidden="true"></span>
+          <span id="theme-label">Evening Ink</span>
         </button>
       </div>
     </div>
   </header>
 
-  <main>
-    <!-- Hero / About Section -->
-    <section class="hero-section" id="about">
-      <div class="container">
-        <div class="hero-grid">
-          <div class="hero-content">
-            <div class="status-pill">
-              <span class="status-dot" aria-hidden="true"></span>
-              <span>Software Developer @ IBM</span>
-              <span class="pill-sep">•</span>
-              <span>Greater Boston, MA</span>
-              <span class="pill-sep">•</span>
-              <span>US Citizen</span>
-            </div>
-
-            <h1 class="hero-title">
-              Building resilient <span class="gradient-text">Full-Stack Platforms</span> &amp; autonomous <span class="gradient-text">Production AI Agents</span>.
-            </h1>
-
-            <p class="hero-subtitle">
-              <strong>Full Stack &amp; Applied AI Software Engineer</strong> with <strong>7+ years</strong> of experience architecting enterprise web applications, distributed microservices, and cloud-native infrastructure across <strong>IBM</strong>, <strong>Optum</strong>, <strong>Tesla</strong>, and fintech.
+  <!-- Split-Screen Fluid Monograph Layout -->
+  <div class="monograph-shell">
+    <!-- LEFT: Sticky Personal Monograph Rail -->
+    <aside class="profile-rail" aria-label="Profile &amp; Navigation">
+      <div class="profile-sticky">
+        <div class="portrait-row">
+          <div class="portrait-frame">
+            <img src="./assets/img/avatar.png" alt="Portrait of Smit Patel" width="88" height="88" class="portrait-img" />
+          </div>
+          <div class="identity-block">
+            <h1 class="display-name">Smit Patel</h1>
+            <p class="identity-role">Full Stack &amp; Applied AI Engineer</p>
+            <p class="identity-now">
+              <span class="dot-pine" aria-hidden="true"></span>
+              Software Developer at <strong>IBM</strong>
             </p>
-
-            <p class="hero-summary">
-              Proven end-to-end ownership across <code>Python (FastAPI, Flask, Django)</code>, <code>TypeScript / React</code>, and <code>Java (Spring Boot)</code> on <code>AWS</code> &amp; <code>Kubernetes</code>—including scaling an autonomous multi-cluster <strong>AI Incident Triage &amp; Root Cause Analysis (RCA) Agent</strong> across <strong>9 production Kubernetes clusters</strong> at IBM alongside zero-downtime VPC migrations and GitOps governance.
-            </p>
-
-            <!-- Primary CTA & Resume Download Group -->
-            <div class="cta-row">
-              <a href="./downloads/smit_patel.pdf" download="Smit_Patel_Resume.pdf" class="btn btn-primary">
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                  <polyline points="7 10 12 15 17 10"></polyline>
-                  <line x1="12" y1="15" x2="12" y2="3"></line>
-                </svg>
-                <span>Download Resume (PDF)</span>
-              </a>
-
-              <a href="./downloads/smit_patel.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <line x1="10" y1="14" x2="21" y2="3"></line>
-                </svg>
-                <span>View PDF</span>
-              </a>
-
-              <a href="./downloads/SMIT_PATEL.docx" download="Smit_Patel_Resume.docx" class="btn btn-ghost" title="Download Word (.docx) format">
-                <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                  <polyline points="14 2 14 8 20 8"></polyline>
-                  <line x1="16" y1="13" x2="8" y2="13"></line>
-                  <line x1="16" y1="17" x2="8" y2="17"></line>
-                </svg>
-                <span>DOCX</span>
-              </a>
-            </div>
-
-            <!-- Quick Contact & Social Chips -->
-            <div class="social-strip">
-              <button type="button" class="contact-chip" id="copy-email-btn" data-email="skpatel0211@gmail.com" title="Click to copy email address">
-                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <rect x="2" y="4" width="20" height="16" rx="2"></rect>
-                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
-                </svg>
-                <span>skpatel0211@gmail.com</span>
-                <span class="chip-action" id="copy-badge">Copy</span>
-              </button>
-
-              <a href="https://www.linkedin.com/in/smit999" target="_blank" rel="noopener noreferrer" class="contact-chip">
-                <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true">
-                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"></path>
-                </svg>
-                <span>linkedin.com/in/smit999</span>
-              </a>
-
-              <a href="https://github.com/smit999" target="_blank" rel="noopener noreferrer" class="contact-chip">
-                <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor" aria-hidden="true">
-                  <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"></path>
-                </svg>
-                <span>github.com/smit999</span>
-              </a>
-
-              <a href="tel:+17816008208" class="contact-chip">
-                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                </svg>
-                <span>(781) 600-8208</span>
-              </a>
-            </div>
-          </div>
-
-          <!-- Architecture / Telemetry Highlight Card -->
-          <aside class="hero-card" aria-label="Engineering Snapshot">
-            <div class="terminal-window">
-              <div class="terminal-bar">
-                <div class="terminal-dots" aria-hidden="true">
-                  <span class="dot red"></span>
-                  <span class="dot yellow"></span>
-                  <span class="dot green"></span>
-                </div>
-                <span class="terminal-title">smit_patel.profile.yaml</span>
-              </div>
-              <div class="terminal-body">
-                <div class="kv-row">
-                  <span class="kv-key">current_role:</span>
-                  <span class="kv-val accent">Software Developer @ IBM</span>
-                </div>
-                <div class="kv-row">
-                  <span class="kv-key">experience:</span>
-                  <span class="kv-val">7+ Years (IBM • Optum • Tesla • Fintech)</span>
-                </div>
-                <div class="kv-row">
-                  <span class="kv-key">core_stack:</span>
-                  <span class="kv-val">[Python, TypeScript, React, Java, AWS, K8s]</span>
-                </div>
-                <div class="kv-row">
-                  <span class="kv-key">applied_ai:</span>
-                  <span class="kv-val">[AI Agents, Tool Calling, RAG, Incident RCA]</span>
-                </div>
-                <div class="kv-row">
-                  <span class="kv-key">observability:</span>
-                  <span class="kv-val">[Instana APM, Kafka, OpenSearch, Kyverno]</span>
-                </div>
-                <div class="kv-row">
-                  <span class="kv-key">education:</span>
-                  <span class="kv-val">M.S. Computer Science — UMass Boston (3.8)</span>
-                </div>
-                <div class="kv-divider"></div>
-                <div class="spotlight-box">
-                  <div class="spotlight-label">PRODUCTION AI SPOTLIGHT @ IBM</div>
-                  <p>Autonomous <strong>AI Incident Triage &amp; RCA Agent</strong> correlating Instana APM, Slack alerts, wiki runbooks (RAG), Kafka lag &amp; OpenSearch logs across <strong>9 production K8s clusters</strong>.</p>
-                </div>
-              </div>
-            </div>
-          </aside>
-        </div>
-
-        <!-- Key Impact Metrics Strip -->
-        <div class="metrics-grid" aria-label="Career Impact Metrics">
-          <div class="metric-card">
-            <div class="metric-value">7+<span> yrs</span></div>
-            <div class="metric-label">Enterprise Full-Stack, Distributed Backend &amp; Cloud Engineering</div>
-          </div>
-          <div class="metric-card">
-            <div class="metric-value">9<span> clusters</span></div>
-            <div class="metric-label">Production Kubernetes Clusters Running Autonomous AI RCA Agent</div>
-          </div>
-          <div class="metric-card">
-            <div class="metric-value">50<span>%</span></div>
-            <div class="metric-label">Deployment Time Reduction Engineered via K8s &amp; CI/CD at Tesla</div>
-          </div>
-          <div class="metric-card">
-            <div class="metric-value">9<span> squads</span></div>
-            <div class="metric-label">Engineering Teams Supported via Core Platform, GitOps &amp; Kyverno</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Technical Skills Section -->
-    <section class="section" id="skills">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <span class="section-eyebrow">Core Stack &amp; Capabilities</span>
-            <h2 class="section-title">Technical Skills</h2>
-          </div>
-          <div class="skills-controls">
-            <div class="filter-tabs" role="tablist" aria-label="Filter skill categories">
-              <button type="button" class="filter-tab active" data-filter="all" role="tab" aria-selected="true">All</button>
-              <button type="button" class="filter-tab" data-filter="ai" role="tab" aria-selected="false">AI &amp; Agents</button>
-              <button type="button" class="filter-tab" data-filter="fullstack" role="tab" aria-selected="false">Full-Stack &amp; APIs</button>
-              <button type="button" class="filter-tab" data-filter="cloud" role="tab" aria-selected="false">Cloud &amp; K8s</button>
-              <button type="button" class="filter-tab" data-filter="data" role="tab" aria-selected="false">Data &amp; Observability</button>
-            </div>
           </div>
         </div>
 
-        <div class="skills-grid" id="skills-grid">
-          <!-- AI & Agentic Engineering -->
-          <article class="skill-card featured-skill" data-category="ai">
-            <div class="skill-card-head">
-              <span class="skill-icon ai-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="3"/></svg>
-              </span>
-              <h3>AI &amp; Agentic Engineering</h3>
-            </div>
-            <div class="tag-cloud">
-              <span class="tech-tag highlight">Autonomous AI Agents</span>
-              <span class="tech-tag highlight">Tool Calling &amp; Orchestration</span>
-              <span class="tech-tag highlight">Retrieval-Augmented Generation (RAG)</span>
-              <span class="tech-tag">OpenAI / Gemini / Claude APIs</span>
-              <span class="tech-tag">Automated Incident RCA Workflows</span>
-              <span class="tech-tag">Computer Vision &amp; ML Pipelines</span>
-              <span class="tech-tag">Hugging Face / Keras / OpenCV / Scikit-learn</span>
-            </div>
-          </article>
+        <p class="rail-bio">
+          Designing resilient distributed backends, expressive React/TypeScript interfaces, and autonomous production AI agents across cloud-native Kubernetes infrastructure.
+        </p>
 
-          <!-- Languages & Frontend -->
-          <article class="skill-card" data-category="fullstack">
-            <div class="skill-card-head">
-              <span class="skill-icon code-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-              </span>
-              <h3>Languages &amp; Frontend</h3>
-            </div>
-            <div class="tag-cloud">
-              <span class="tech-tag highlight">Python</span>
-              <span class="tech-tag highlight">TypeScript</span>
-              <span class="tech-tag highlight">React.js</span>
-              <span class="tech-tag">JavaScript (ES6+)</span>
-              <span class="tech-tag highlight">Java</span>
-              <span class="tech-tag">C#</span>
-              <span class="tech-tag">SQL</span>
-              <span class="tech-tag">Bash</span>
-              <span class="tech-tag">HTML5 &amp; CSS3</span>
-              <span class="tech-tag">Responsive UI/UX Architecture</span>
-            </div>
-          </article>
+        <!-- Fluid Gliding Section Index -->
+        <nav class="chapter-nav" aria-label="Dossier Chapters">
+          <div class="chapter-glider" id="chapter-glider" aria-hidden="true"></div>
+          <a href="#overview" class="chapter-link active" data-chapter="overview">
+            <span class="chapter-num">01</span>
+            <span class="chapter-name">Overview</span>
+          </a>
+          <a href="#experience" class="chapter-link" data-chapter="experience">
+            <span class="chapter-num">02</span>
+            <span class="chapter-name">Experience</span>
+            <span class="chapter-note">7+ yrs</span>
+          </a>
+          <a href="#systems" class="chapter-link" data-chapter="systems">
+            <span class="chapter-num">03</span>
+            <span class="chapter-name">Selected Systems</span>
+            <span class="chapter-note">AI &amp; Web</span>
+          </a>
+          <a href="#capabilities" class="chapter-link" data-chapter="capabilities">
+            <span class="chapter-num">04</span>
+            <span class="chapter-name">Capabilities</span>
+          </a>
+          <a href="#education" class="chapter-link" data-chapter="education">
+            <span class="chapter-num">05</span>
+            <span class="chapter-name">Education</span>
+          </a>
+        </nav>
 
-          <!-- Backend & APIs -->
-          <article class="skill-card" data-category="fullstack">
-            <div class="skill-card-head">
-              <span class="skill-icon api-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
-              </span>
-              <h3>Backend &amp; Distributed APIs</h3>
-            </div>
-            <div class="tag-cloud">
-              <span class="tech-tag highlight">FastAPI</span>
-              <span class="tech-tag highlight">Flask</span>
-              <span class="tech-tag highlight">Django</span>
-              <span class="tech-tag highlight">Spring Boot</span>
-              <span class="tech-tag">Node.js</span>
-              <span class="tech-tag">.NET</span>
-              <span class="tech-tag">Sync &amp; Async RESTful APIs</span>
-              <span class="tech-tag">Microservices Architecture</span>
-              <span class="tech-tag">GraphQL</span>
-              <span class="tech-tag">OAuth 2.0 / OIDC / JWT</span>
-            </div>
-          </article>
-
-          <!-- Cloud, Kubernetes & DevSecOps -->
-          <article class="skill-card" data-category="cloud">
-            <div class="skill-card-head">
-              <span class="skill-icon cloud-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
-              </span>
-              <h3>Cloud, Kubernetes &amp; DevSecOps</h3>
-            </div>
-            <div class="tag-cloud">
-              <span class="tech-tag highlight">AWS (EC2, S3, Lambda, RDS, IAM)</span>
-              <span class="tech-tag highlight">Kubernetes (K8s)</span>
-              <span class="tech-tag">Docker</span>
-              <span class="tech-tag highlight">Kyverno Policy Governance</span>
-              <span class="tech-tag">VPC Infrastructure</span>
-              <span class="tech-tag">GitOps</span>
-              <span class="tech-tag">Terraform</span>
-              <span class="tech-tag">GitHub Actions &amp; Jenkins</span>
-              <span class="tech-tag">Microsoft Azure (AZ-900)</span>
-              <span class="tech-tag">Linux</span>
-            </div>
-          </article>
-
-          <!-- Data, Messaging & Observability -->
-          <article class="skill-card" data-category="data">
-            <div class="skill-card-head">
-              <span class="skill-icon data-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg>
-              </span>
-              <h3>Data, Messaging &amp; Observability</h3>
-            </div>
-            <div class="tag-cloud">
-              <span class="tech-tag highlight">Apache Kafka</span>
-              <span class="tech-tag highlight">OpenSearch</span>
-              <span class="tech-tag highlight">IBM Instana APM</span>
-              <span class="tech-tag">PostgreSQL</span>
-              <span class="tech-tag">MySQL</span>
-              <span class="tech-tag">SQL Server</span>
-              <span class="tech-tag">Snowflake</span>
-              <span class="tech-tag">Redis</span>
-              <span class="tech-tag">Apache Airflow</span>
-              <span class="tech-tag">Custom Telemetry &amp; Delay Dashboards</span>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Professional Experience Section -->
-    <section class="section" id="experience">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <span class="section-eyebrow">Career Trajectory</span>
-            <h2 class="section-title">Professional Experience</h2>
+        <!-- Pinned Resume Dossier Controls -->
+        <div class="dossier-box">
+          <div class="dossier-label">
+            <span>CURRICULUM VITAE</span>
+            <span class="dossier-updated">UPDATED 2026</span>
           </div>
-          <a href="./downloads/smit_patel.pdf" download="Smit_Patel_Resume.pdf" class="btn btn-secondary btn-sm">
-            Download Full Resume
+          <div class="dossier-actions">
+            <a href="./downloads/smit_patel.pdf" download="Smit_Patel_Resume.pdf" class="btn-editorial-primary">
+              <span>Download PDF</span>
+              <span class="arrow-down" aria-hidden="true">↓</span>
+            </a>
+            <a href="./downloads/smit_patel.pdf" target="_blank" rel="noopener noreferrer" class="btn-editorial-ghost" title="Open PDF in new tab">
+              View ↗
+            </a>
+            <a href="./downloads/SMIT_PATEL.docx" download="Smit_Patel_Resume.docx" class="btn-editorial-ghost" title="Download Word (.docx) resume">
+              DOCX
+            </a>
+          </div>
+        </div>
+
+        <!-- Direct Contact & Channels -->
+        <div class="rail-channels">
+          <button type="button" class="channel-item" id="copy-email-btn" data-email="skpatel0211@gmail.com">
+            <span class="channel-key">Email</span>
+            <span class="channel-val">
+              skpatel0211@gmail.com
+              <span class="copy-pill" id="copy-status">Copy</span>
+            </span>
+          </button>
+          <a href="https://www.linkedin.com/in/smit999" target="_blank" rel="noopener noreferrer" class="channel-item">
+            <span class="channel-key">LinkedIn</span>
+            <span class="channel-val">in/smit999 ↗</span>
+          </a>
+          <a href="https://github.com/smit999" target="_blank" rel="noopener noreferrer" class="channel-item">
+            <span class="channel-key">GitHub</span>
+            <span class="channel-val">github.com/smit999 ↗</span>
+          </a>
+          <a href="tel:+17816008208" class="channel-item">
+            <span class="channel-key">Phone</span>
+            <span class="channel-val">(781) 600-8208</span>
           </a>
         </div>
-
-        <div class="timeline">
-          <!-- IBM -->
-          <article class="timeline-item current">
-            <div class="timeline-marker" aria-hidden="true"></div>
-            <div class="timeline-card">
-              <div class="job-header">
-                <div>
-                  <div class="job-company-row">
-                    <h3 class="job-company">IBM</h3>
-                    <span class="badge badge-live">Current Role</span>
-                  </div>
-                  <p class="job-role">Software Developer</p>
-                </div>
-                <div class="job-meta">
-                  <span class="job-date">Nov 2024 – Present</span>
-                  <span class="job-location">Lowell, MA</span>
-                </div>
-              </div>
-
-              <div class="job-tags">
-                <span>AI Agents</span>
-                <span>RAG</span>
-                <span>Kubernetes (9 Clusters)</span>
-                <span>Instana APM</span>
-                <span>Apache Kafka</span>
-                <span>OpenSearch</span>
-                <span>Kyverno</span>
-                <span>VPC Migration</span>
-                <span>GitOps</span>
-                <span>Python &amp; Node.js</span>
-              </div>
-
-              <ul class="job-bullets">
-                <li><strong>Architected and scaled</strong> an autonomous <strong>AI Incident Triage &amp; Root Cause Analysis (RCA) Agent</strong> across <strong>9 production Kubernetes clusters</strong>, continuously monitoring <strong>Instana</strong> events and <strong>Slack</strong> alert channels to automate first-response diagnostics for SRE and Operations teams.</li>
-                <li><strong>Engineered</strong> multi-source agentic tool-calling and runbook retrieval (<strong>RAG</strong>) workflows that automatically cross-reference internal <strong>wiki runbooks</strong> against live <strong>Instana APM metrics</strong>, custom delay dashboards, <strong>Apache Kafka</strong> consumer lag monitors, <strong>Kubernetes</strong> pod/deployment health, and <strong>OpenSearch</strong> logs to synthesize probable RCAs and drastically reduce manual operational triage toil.</li>
-                <li><strong>Executed</strong> live production cluster migrations from classic infrastructure to <strong>VPC infrastructure</strong>, modernizing the cloud network architecture while maintaining high availability for mission-critical workloads.</li>
-                <li><strong>Implemented</strong> custom <strong>Kyverno</strong> security, compliance, and admission-control policies across <strong>7 production Kubernetes clusters</strong>, enforcing standardized deployment quality gates across engineering squads.</li>
-                <li><strong>Manage</strong> Kubernetes <strong>GitOps</strong> workflows, cloud infrastructure, and production operations within a 5-engineer core platform squad supporting <strong>9 sister engineering teams</strong> under the SIP umbrella.</li>
-                <li><strong>Develop</strong> and maintain backend microservices, asynchronous REST APIs, and automated <strong>CI/CD</strong> pipelines using <strong>Python</strong>, <strong>Node.js</strong>, <strong>Docker</strong>, and <strong>GitHub Actions</strong>.</li>
-              </ul>
-            </div>
-          </article>
-
-          <!-- Optum -->
-          <article class="timeline-item">
-            <div class="timeline-marker" aria-hidden="true"></div>
-            <div class="timeline-card">
-              <div class="job-header">
-                <div>
-                  <h3 class="job-company">Optum (UnitedHealth Group)</h3>
-                  <p class="job-role">Software Engineer</p>
-                </div>
-                <div class="job-meta">
-                  <span class="job-date">Jan 2023 – Nov 2024</span>
-                  <span class="job-location">Boston, MA</span>
-                </div>
-              </div>
-
-              <div class="job-tags">
-                <span>Python Microservices</span>
-                <span>Java Spring Boot</span>
-                <span>Snowflake</span>
-                <span>AWS &amp; Azure</span>
-                <span>Infrastructure as Code</span>
-                <span>GitHub Actions</span>
-              </div>
-
-              <ul class="job-bullets">
-                <li><strong>Delivered</strong> an impactful presentation to a 150-member Data Science Guild, showcasing the utilization of a DCE environment for provisional <strong>Azure Cloud</strong> and <strong>AWS</strong> setups, thereby facilitating R&amp;D in novel data science techniques within Optum.</li>
-                <li><strong>Developed</strong> <strong>Python</strong>-based <strong>microservices</strong> to orchestrate <strong>Snowflake</strong> resources for internal tenants, facilitating <strong>CRUD operations</strong> on the platform.</li>
-                <li><strong>Successfully elevated</strong> a fellow Trainee Development Program (TDP) associate from a non-technical background to <strong>Java</strong> proficiency through dedicated mentorship, covering comprehensive OOP concepts and industry best practices, while simultaneously enhancing our team's project contributions.</li>
-                <li><strong>Spearheaded</strong> the development of resilient <strong>Java Spring Boot</strong> APIs and pioneered the integration of automated code quality checks using <strong>GitHub Actions</strong> within the PAAN application, substantially improving code reliability and deployment efficiency by <strong>20%</strong>.</li>
-                <li><strong>Innovated</strong> within the HCP platform by designing and executing PRM agent resources and <strong>Infrastructure as Code</strong>, significantly advancing operational effectiveness, and by architecting a new <strong>Snowflake</strong> tenancy model using <strong>Python</strong> that bolstered the adoption of <strong>CI/CD</strong> and DevOps practices, setting a new standard for project scalability and collaboration.</li>
-              </ul>
-            </div>
-          </article>
-
-          <!-- Tesla -->
-          <article class="timeline-item">
-            <div class="timeline-marker" aria-hidden="true"></div>
-            <div class="timeline-card">
-              <div class="job-header">
-                <div>
-                  <h3 class="job-company">Tesla, Inc.</h3>
-                  <p class="job-role">Software Engineer (Python)</p>
-                </div>
-                <div class="job-meta">
-                  <span class="job-date">Apr 2022 – Jan 2023</span>
-                  <span class="job-location">Remote / Palo Alto, CA</span>
-                </div>
-              </div>
-
-              <div class="job-tags">
-                <span>Python 3</span>
-                <span>Django</span>
-                <span>Kubernetes</span>
-                <span>Docker</span>
-                <span>Jenkins &amp; GitHub Actions</span>
-                <span>OAuth 2.0 / OIDC</span>
-                <span>Node.js</span>
-                <span>MySQL &amp; PostgreSQL</span>
-              </div>
-
-              <ul class="job-bullets">
-                <li><strong>Revolutionized</strong> the deployment process by constructing and deploying <strong>CI/CD</strong> pipelines with <strong>GitHub Actions</strong>, <strong>Jenkins</strong>, <strong>Docker</strong>, and <strong>Kubernetes</strong>, cutting deployment times by half and boosting overall productivity through streamlined and automated workflows.</li>
-                <li><strong>Led</strong> a critical system upgrade from <strong>Python 2.7 to Python 3</strong>, expertly transitioning databases from <strong>PostgreSQL</strong> to <strong>MySQL</strong> with strategic <strong>Linux</strong> SED scripting, thereby maintaining system integrity and enhancing security, and further secured application access by implementing <strong>OAuth 2.0</strong> and <strong>OIDC</strong> with <strong>Python 3</strong> and <strong>Django</strong> for reliable <strong>JWT</strong> handling and protected user authentication flows.</li>
-                <li><strong>Initiated</strong> the initiative to upgrade Tesla's Open edX <strong>Django</strong> application to <strong>Python 3</strong>, fortifying the educational platform's security and performance, and integrated dynamic content management with <strong>Node.js</strong> and <strong>Akamai Storage</strong> solutions, enabling efficient handling of over <strong>50</strong> remote learning modules.</li>
-              </ul>
-            </div>
-          </article>
-
-          <!-- Lendica -->
-          <article class="timeline-item">
-            <div class="timeline-marker" aria-hidden="true"></div>
-            <div class="timeline-card">
-              <div class="job-header">
-                <div>
-                  <h3 class="job-company">Lendica, Inc.</h3>
-                  <p class="job-role">Software Engineer</p>
-                </div>
-                <div class="job-meta">
-                  <span class="job-date">Feb 2021 – Oct 2021</span>
-                  <span class="job-location">Boston, MA</span>
-                </div>
-              </div>
-
-              <div class="job-tags">
-                <span>Python</span>
-                <span>Apache Airflow 2.0</span>
-                <span>AWS S3 &amp; boto3</span>
-                <span>OAuth 2.0</span>
-                <span>PostgreSQL</span>
-                <span>Open-Source PyPI &amp; npm</span>
-              </div>
-
-              <ul class="job-bullets">
-                <li><strong>Upgraded</strong> Lendica's Application Portal by engineering an advanced automation system with <strong>Python</strong> and <strong>OAuth 2.0</strong>, drastically improving the efficiency of third-party application integrations and streamlining the user experience.</li>
-                <li><strong>Designed</strong> and deployed a highly responsive data processing pipeline using <strong>Apache Airflow 2.0</strong>, enabling automated, condition-based triggering of <strong>REST API</strong> functions that accelerated data retrieval and updates within the <strong>AWS S3</strong> environment.</li>
-                <li><strong>Played</strong> a crucial role in forging a productive partnership with Terrayn, a top-tier Digital Marketing &amp; SEO firm, by co-developing an MIT-licensed <strong>Python pip package</strong> that supports Metrc compliance, complemented by an <strong>npm</strong> frontend package, significantly enhancing industry-standard regulatory adherence.</li>
-                <li><strong>Showcased</strong> extensive <strong>AWS</strong> proficiency by employing <strong>boto</strong> and <strong>boto3</strong> libraries to facilitate efficient cloud operations and crafted a secure <strong>OAuth 2.0</strong> authentication protocol for Lendica's front-facing platforms, incorporating automated backend token generation and <strong>PostgreSQL</strong> encryption to uphold high-security standards.</li>
-              </ul>
-            </div>
-          </article>
-
-          <!-- Acespritech -->
-          <article class="timeline-item">
-            <div class="timeline-marker" aria-hidden="true"></div>
-            <div class="timeline-card">
-              <div class="job-header">
-                <div>
-                  <h3 class="job-company">Acespritech Pvt. Ltd.</h3>
-                  <p class="job-role">Assoc. Software Developer</p>
-                </div>
-                <div class="job-meta">
-                  <span class="job-date">Oct 2017 – Sep 2019</span>
-                  <span class="job-location">Gandhinagar, Gujarat, IN</span>
-                </div>
-              </div>
-
-              <div class="job-tags">
-                <span>Python</span>
-                <span>Django</span>
-                <span>Responsive Web UI</span>
-                <span>Agile</span>
-              </div>
-
-              <ul class="job-bullets">
-                <li><strong>Excelled</strong> in the creation of application components utilizing advanced programming techniques within an <strong>Agile</strong> framework, resulting in the timely delivery of high-quality software solutions.</li>
-                <li><strong>Developed</strong> responsive and user-centric web interfaces with <strong>Python</strong> and <strong>Django</strong>, improving user experience and contributing to a <strong>20%</strong> increase in development efficiency through proactive involvement in code testing.</li>
-              </ul>
-            </div>
-          </article>
-        </div>
       </div>
-    </section>
+    </aside>
 
-    <!-- Selected AI & Full Stack Projects -->
-    <section class="section" id="projects">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <span class="section-eyebrow">Systems &amp; Applications</span>
-            <h2 class="section-title">Selected AI &amp; Full Stack Projects</h2>
+    <!-- RIGHT: Flowing Editorial Stream -->
+    <main class="editorial-stream">
+      <!-- 01 / OVERVIEW -->
+      <section class="chapter reveal" id="overview">
+        <div class="chapter-kicker">
+          <span class="kicker-num">01</span>
+          <span class="kicker-rule" aria-hidden="true"></span>
+          <span class="kicker-title">OVERVIEW &amp; THESIS</span>
+        </div>
+
+        <h2 class="editorial-lead">
+          Seven years crafting <em>dependable cloud software</em>—now bridging distributed microservices with <em>autonomous production AI</em>.
+        </h2>
+
+        <div class="prose-block">
+          <p>
+            I’m a <strong>Full Stack Software Engineer</strong> experienced in owning products end-to-end across <strong>Python</strong> (FastAPI, Flask, Django), <strong>TypeScript / React</strong>, and <strong>Java</strong> (Spring Boot) on <strong>AWS</strong> and <strong>Kubernetes</strong> across <strong>IBM</strong>, <strong>Optum</strong>, <strong>Tesla</strong>, and fintech environments.
+          </p>
+          <p>
+            Most recently at IBM, I architected and scaled an autonomous multi-cluster <strong>Incident Triage &amp; Root Cause Analysis (RCA) Agent</strong> across <strong>9 production Kubernetes clusters</strong>—pairing retrieval-augmented runbooks with live telemetry, Kafka lag inspection, and OpenSearch logs alongside zero-downtime VPC migrations and GitOps policy governance.
+          </p>
+        </div>
+
+        <!-- Editorial Figures Strip (Print-style tabular figures, zero boxy SaaS cards) -->
+        <dl class="figures-strip" aria-label="Selected Career Figures">
+          <div class="figure-cell">
+            <dt>Production Tenure</dt>
+            <dd>7+ <span>years</span></dd>
           </div>
-        </div>
-
-        <div class="projects-grid">
-          <!-- Project 1 -->
-          <article class="project-card project-featured">
-            <div class="project-top">
-              <span class="project-badge">Production Applied AI • Multi-Cluster SRE</span>
-              <h3 class="project-title">Autonomous Multi-Cluster AI SRE &amp; Incident RCA Agent</h3>
-              <p class="project-desc">
-                Built an event-driven production <strong>AI agent</strong> integrated with <strong>Slack</strong> alerts and observability APIs across <strong>9 Kubernetes clusters</strong> to automate runbook lookup, metric/log correlation, <strong>Kafka</strong> lag inspection, and probable Root Cause Analysis (RCA) generation for Operations engineers.
-              </p>
-            </div>
-            <div class="project-arch">
-              <div class="arch-flow">
-                <span>Slack &amp; Instana Alerts</span>
-                <span class="arrow">→</span>
-                <span>RAG Runbook Engine</span>
-                <span class="arrow">→</span>
-                <span>K8s + Kafka + OpenSearch Tools</span>
-                <span class="arrow">→</span>
-                <span>Synthesized RCA</span>
-              </div>
-              <div class="tag-cloud">
-                <span class="tech-tag highlight">Python</span>
-                <span class="tech-tag highlight">LLMs &amp; Tool Calling</span>
-                <span class="tech-tag highlight">RAG</span>
-                <span class="tech-tag">Kubernetes</span>
-                <span class="tech-tag">Apache Kafka</span>
-                <span class="tech-tag">OpenSearch</span>
-                <span class="tech-tag">IBM Instana</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 2 -->
-          <article class="project-card">
-            <div class="project-top">
-              <span class="project-badge">Full-Stack Web &amp; LLM Workflows</span>
-              <h3 class="project-title">Adaptive Routine &amp; Dynamic Scheduling Full Stack Application</h3>
-              <p class="project-desc">
-                Engineered an end-to-end full stack web application featuring dynamic scheduling algorithms, state-driven <strong>React/TypeScript</strong> UI components, relational persistence, and <strong>LLM API</strong> workflows for real-time schedule optimization from user activity logs.
-              </p>
-            </div>
-            <div class="tag-cloud">
-              <span class="tech-tag highlight">React</span>
-              <span class="tech-tag highlight">TypeScript</span>
-              <span class="tech-tag highlight">Python REST APIs</span>
-              <span class="tech-tag">LLM APIs</span>
-              <span class="tech-tag">Relational DB</span>
-            </div>
-          </article>
-
-          <!-- Project 3 -->
-          <article class="project-card">
-            <div class="project-top">
-              <span class="project-badge">Computer Vision &amp; ML Inference API</span>
-              <h3 class="project-title">Real-Time Facial Expression Recognition &amp; Computer Vision API</h3>
-              <p class="project-desc">
-                Implemented a real-time facial emotion detection and CNN classification ML pipeline in <strong>Python</strong>, exposing low-latency model inference endpoints via a <strong>Flask REST API</strong> integrated with an interactive web interface.
-              </p>
-            </div>
-            <div class="tag-cloud">
-              <span class="tech-tag highlight">Python</span>
-              <span class="tech-tag highlight">Flask REST API</span>
-              <span class="tech-tag">OpenCV &amp; Keras</span>
-              <span class="tech-tag">Scikit-learn &amp; Pandas</span>
-              <span class="tech-tag">Computer Vision</span>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Education & Certifications -->
-    <section class="section" id="education">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <span class="section-eyebrow">Academic Foundation &amp; Credentials</span>
-            <h2 class="section-title">Education &amp; Certifications</h2>
+          <div class="figure-cell">
+            <dt>Autonomous AI Footprint</dt>
+            <dd>9 <span>K8s clusters</span></dd>
           </div>
+          <div class="figure-cell">
+            <dt>CI/CD Cycle Reduction</dt>
+            <dd>50% <span>at Tesla</span></dd>
+          </div>
+          <div class="figure-cell">
+            <dt>Platform Reach</dt>
+            <dd>9 <span>eng. squads</span></dd>
+          </div>
+        </dl>
+      </section>
+
+      <!-- 02 / EXPERIENCE -->
+      <section class="chapter reveal" id="experience">
+        <div class="chapter-header-row">
+          <div class="chapter-kicker">
+            <span class="kicker-num">02</span>
+            <span class="kicker-rule" aria-hidden="true"></span>
+            <span class="kicker-title">PROFESSIONAL EXPERIENCE</span>
+          </div>
+          <button type="button" class="text-toggle-btn" id="toggle-all-roles" data-expanded="false">
+            Expand all roles
+          </button>
         </div>
 
-        <div class="edu-grid">
-          <article class="edu-card">
-            <div class="edu-icon" aria-hidden="true">🎓</div>
-            <div class="edu-body">
-              <div class="edu-top">
-                <h3>University of Massachusetts Boston</h3>
-                <span class="edu-year">Dec 2021</span>
+        <div class="career-ledger" id="career-ledger">
+          <!-- Role 1: IBM (Open by default) -->
+          <article class="role-entry is-open" data-role>
+            <button type="button" class="role-trigger" aria-expanded="true">
+              <div class="role-dates">
+                <span>Nov 2024 — Present</span>
+                <span class="role-badge-now">Current</span>
               </div>
-              <p class="edu-degree">Master of Science (M.S.) in Computer Science</p>
-              <p class="edu-meta">Boston, MA • <strong>GPA: 3.8 / 4.0</strong></p>
+              <div class="role-main-head">
+                <div class="role-title-line">
+                  <h3 class="role-org">IBM</h3>
+                  <span class="role-sep">·</span>
+                  <span class="role-position">Software Developer</span>
+                </div>
+                <p class="role-teaser">
+                  Autonomous AI Incident RCA Agent across 9 K8s clusters, VPC cluster migrations, Kyverno governance &amp; core GitOps platform.
+                </p>
+              </div>
+              <div class="role-RightMeta">
+                <span class="role-city">Lowell, MA</span>
+                <span class="role-chevron" aria-hidden="true">+</span>
+              </div>
+            </button>
+
+            <div class="role-drawer">
+              <div class="role-drawer-inner">
+                <div class="role-stack-line">
+                  <span>AI Agents</span>
+                  <span>RAG</span>
+                  <span>Kubernetes</span>
+                  <span>Instana APM</span>
+                  <span>Apache Kafka</span>
+                  <span>OpenSearch</span>
+                  <span>Kyverno</span>
+                  <span>VPC</span>
+                  <span>GitOps</span>
+                  <span>Python &amp; Node.js</span>
+                </div>
+                <ul class="editorial-list">
+                  <li><strong>Architected and scaled</strong> an autonomous <strong>AI Incident Triage &amp; Root Cause Analysis (RCA) Agent</strong> across <strong>9 production Kubernetes clusters</strong>, continuously monitoring <strong>Instana</strong> events and <strong>Slack</strong> alert channels to automate first-response diagnostics for SRE and Operations teams.</li>
+                  <li><strong>Engineered</strong> multi-source agentic tool-calling and runbook retrieval (<strong>RAG</strong>) workflows that automatically cross-reference internal <strong>wiki runbooks</strong> against live <strong>Instana APM metrics</strong>, custom delay dashboards, <strong>Apache Kafka</strong> consumer lag monitors, <strong>Kubernetes</strong> pod/deployment health, and <strong>OpenSearch</strong> logs to synthesize probable RCAs and drastically reduce manual operational triage toil.</li>
+                  <li><strong>Executed</strong> live production cluster migrations from classic infrastructure to <strong>VPC infrastructure</strong>, modernizing the cloud network architecture while maintaining high availability for mission-critical workloads.</li>
+                  <li><strong>Implemented</strong> custom <strong>Kyverno</strong> security, compliance, and admission-control policies across <strong>7 production Kubernetes clusters</strong>, enforcing standardized deployment quality gates across engineering squads.</li>
+                  <li><strong>Manage</strong> Kubernetes <strong>GitOps</strong> workflows, cloud infrastructure, and production operations within a 5-engineer core platform squad supporting <strong>9 sister engineering teams</strong> under the SIP umbrella.</li>
+                  <li><strong>Develop</strong> and maintain backend microservices, asynchronous REST APIs, and automated <strong>CI/CD</strong> pipelines using <strong>Python</strong>, <strong>Node.js</strong>, <strong>Docker</strong>, and <strong>GitHub Actions</strong>.</li>
+                </ul>
+              </div>
             </div>
           </article>
 
-          <article class="edu-card">
-            <div class="edu-icon" aria-hidden="true">🏛️</div>
-            <div class="edu-body">
-              <div class="edu-top">
-                <h3>LDRP Institute of Technology &amp; Research</h3>
-                <span class="edu-year">2017</span>
+          <!-- Role 2: Optum (Open by default so recent 4 yrs are immediately visible) -->
+          <article class="role-entry is-open" data-role>
+            <button type="button" class="role-trigger" aria-expanded="true">
+              <div class="role-dates">
+                <span>Jan 2023 — Nov 2024</span>
               </div>
-              <p class="edu-degree">Bachelor of Engineering (B.E.) in Computer Engineering</p>
-              <p class="edu-meta">Gandhinagar, Gujarat, IN • <strong>GPA: 3.5 / 4.0</strong></p>
+              <div class="role-main-head">
+                <div class="role-title-line">
+                  <h3 class="role-org">Optum <span class="org-sub">(UnitedHealth Group)</span></h3>
+                  <span class="role-sep">·</span>
+                  <span class="role-position">Software Engineer</span>
+                </div>
+                <p class="role-teaser">
+                  Python Snowflake tenancy microservices, resilient Java Spring Boot APIs (+20% deploy efficiency) &amp; multi-cloud R&amp;D enablement.
+                </p>
+              </div>
+              <div class="role-RightMeta">
+                <span class="role-city">Boston, MA</span>
+                <span class="role-chevron" aria-hidden="true">+</span>
+              </div>
+            </button>
+
+            <div class="role-drawer">
+              <div class="role-drawer-inner">
+                <div class="role-stack-line">
+                  <span>Python Microservices</span>
+                  <span>Java Spring Boot</span>
+                  <span>Snowflake</span>
+                  <span>AWS &amp; Azure</span>
+                  <span>Infrastructure as Code</span>
+                  <span>GitHub Actions</span>
+                </div>
+                <ul class="editorial-list">
+                  <li><strong>Delivered</strong> an impactful presentation to a 150-member Data Science Guild, showcasing the utilization of a DCE environment for provisional <strong>Azure Cloud</strong> and <strong>AWS</strong> setups, thereby facilitating R&amp;D in novel data science techniques within Optum.</li>
+                  <li><strong>Developed</strong> <strong>Python</strong>-based <strong>microservices</strong> to orchestrate <strong>Snowflake</strong> resources for internal tenants, facilitating <strong>CRUD operations</strong> on the platform.</li>
+                  <li><strong>Successfully elevated</strong> a fellow Trainee Development Program (TDP) associate from a non-technical background to <strong>Java</strong> proficiency through dedicated mentorship, covering comprehensive OOP concepts and industry best practices, while simultaneously enhancing our team's project contributions.</li>
+                  <li><strong>Spearheaded</strong> the development of resilient <strong>Java Spring Boot</strong> APIs and pioneered the integration of automated code quality checks using <strong>GitHub Actions</strong> within the PAAN application, substantially improving code reliability and deployment efficiency by <strong>20%</strong>.</li>
+                  <li><strong>Innovated</strong> within the HCP platform by designing and executing PRM agent resources and <strong>Infrastructure as Code</strong>, significantly advancing operational effectiveness, and by architecting a new <strong>Snowflake</strong> tenancy model using <strong>Python</strong> that bolstered the adoption of <strong>CI/CD</strong> and DevOps practices, setting a new standard for project scalability and collaboration.</li>
+                </ul>
+              </div>
             </div>
           </article>
 
-          <article class="edu-card cert-card">
-            <div class="edu-icon" aria-hidden="true">☁️</div>
-            <div class="edu-body">
-              <div class="edu-top">
-                <h3>Microsoft Certified: Azure Fundamentals</h3>
-                <span class="edu-year">AZ-900</span>
+          <!-- Role 3: Tesla -->
+          <article class="role-entry" data-role>
+            <button type="button" class="role-trigger" aria-expanded="false">
+              <div class="role-dates">
+                <span>Apr 2022 — Jan 2023</span>
               </div>
-              <p class="edu-degree">Cloud Concepts, Architecture, Security &amp; Governance</p>
-              <p class="edu-meta">Microsoft Azure Certification</p>
+              <div class="role-main-head">
+                <div class="role-title-line">
+                  <h3 class="role-org">Tesla, Inc.</h3>
+                  <span class="role-sep">·</span>
+                  <span class="role-position">Software Engineer (Python)</span>
+                </div>
+                <p class="role-teaser">
+                  Halved deployment times via K8s/Docker CI/CD; led Python 2.7→3, PostgreSQL→MySQL &amp; OAuth 2.0 / OIDC platform upgrades.
+                </p>
+              </div>
+              <div class="role-RightMeta">
+                <span class="role-city">Remote / Palo Alto, CA</span>
+                <span class="role-chevron" aria-hidden="true">+</span>
+              </div>
+            </button>
+
+            <div class="role-drawer">
+              <div class="role-drawer-inner">
+                <div class="role-stack-line">
+                  <span>Python 3</span>
+                  <span>Django</span>
+                  <span>Kubernetes</span>
+                  <span>Docker</span>
+                  <span>Jenkins &amp; GitHub Actions</span>
+                  <span>OAuth 2.0 / OIDC</span>
+                  <span>Node.js &amp; Akamai</span>
+                </div>
+                <ul class="editorial-list">
+                  <li><strong>Revolutionized</strong> the deployment process by constructing and deploying <strong>CI/CD</strong> pipelines with <strong>GitHub Actions</strong>, <strong>Jenkins</strong>, <strong>Docker</strong>, and <strong>Kubernetes</strong>, cutting deployment times by half and boosting overall productivity through streamlined and automated workflows.</li>
+                  <li><strong>Led</strong> a critical system upgrade from <strong>Python 2.7 to Python 3</strong>, expertly transitioning databases from <strong>PostgreSQL</strong> to <strong>MySQL</strong> with strategic <strong>Linux</strong> SED scripting, thereby maintaining system integrity and enhancing security, and further secured application access by implementing <strong>OAuth 2.0</strong> and <strong>OIDC</strong> with <strong>Python 3</strong> and <strong>Django</strong> for reliable <strong>JWT</strong> handling and protected user authentication flows.</li>
+                  <li><strong>Initiated</strong> the initiative to upgrade Tesla's Open edX <strong>Django</strong> application to <strong>Python 3</strong>, fortifying the educational platform's security and performance, and integrated dynamic content management with <strong>Node.js</strong> and <strong>Akamai Storage</strong> solutions, enabling efficient handling of over <strong>50</strong> remote learning modules.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- Role 4: Lendica -->
+          <article class="role-entry" data-role>
+            <button type="button" class="role-trigger" aria-expanded="false">
+              <div class="role-dates">
+                <span>Feb 2021 — Oct 2021</span>
+              </div>
+              <div class="role-main-head">
+                <div class="role-title-line">
+                  <h3 class="role-org">Lendica, Inc.</h3>
+                  <span class="role-sep">·</span>
+                  <span class="role-position">Software Engineer</span>
+                </div>
+                <p class="role-teaser">
+                  Fintech OAuth 2.0 integrations, Apache Airflow 2.0 + AWS S3 pipelines, and MIT-licensed open-source PyPI &amp; npm compliance SDKs.
+                </p>
+              </div>
+              <div class="role-RightMeta">
+                <span class="role-city">Boston, MA</span>
+                <span class="role-chevron" aria-hidden="true">+</span>
+              </div>
+            </button>
+
+            <div class="role-drawer">
+              <div class="role-drawer-inner">
+                <div class="role-stack-line">
+                  <span>Python</span>
+                  <span>Apache Airflow 2.0</span>
+                  <span>AWS S3 &amp; boto3</span>
+                  <span>OAuth 2.0</span>
+                  <span>PostgreSQL</span>
+                  <span>PyPI &amp; npm Packages</span>
+                </div>
+                <ul class="editorial-list">
+                  <li><strong>Upgraded</strong> Lendica's Application Portal by engineering an advanced automation system with <strong>Python</strong> and <strong>OAuth 2.0</strong>, drastically improving the efficiency of third-party application integrations and streamlining the user experience.</li>
+                  <li><strong>Designed</strong> and deployed a highly responsive data processing pipeline using <strong>Apache Airflow 2.0</strong>, enabling automated, condition-based triggering of <strong>REST API</strong> functions that accelerated data retrieval and updates within the <strong>AWS S3</strong> environment.</li>
+                  <li><strong>Played</strong> a crucial role in forging a productive partnership with Terrayn, a top-tier Digital Marketing &amp; SEO firm, by co-developing an MIT-licensed <strong>Python pip package</strong> that supports Metrc compliance, complemented by an <strong>npm</strong> frontend package, significantly enhancing industry-standard regulatory adherence.</li>
+                  <li><strong>Showcased</strong> extensive <strong>AWS</strong> proficiency by employing <strong>boto</strong> and <strong>boto3</strong> libraries to facilitate efficient cloud operations and crafted a secure <strong>OAuth 2.0</strong> authentication protocol for Lendica's front-facing platforms, incorporating automated backend token generation and <strong>PostgreSQL</strong> encryption to uphold high-security standards.</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- Role 5: Acespritech -->
+          <article class="role-entry" data-role>
+            <button type="button" class="role-trigger" aria-expanded="false">
+              <div class="role-dates">
+                <span>Oct 2017 — Sep 2019</span>
+              </div>
+              <div class="role-main-head">
+                <div class="role-title-line">
+                  <h3 class="role-org">Acespritech Pvt. Ltd.</h3>
+                  <span class="role-sep">·</span>
+                  <span class="role-position">Assoc. Software Developer</span>
+                </div>
+                <p class="role-teaser">
+                  Full-stack Python &amp; Django web engineering within an Agile delivery practice (+20% development efficiency).
+                </p>
+              </div>
+              <div class="role-RightMeta">
+                <span class="role-city">Gandhinagar, IN</span>
+                <span class="role-chevron" aria-hidden="true">+</span>
+              </div>
+            </button>
+
+            <div class="role-drawer">
+              <div class="role-drawer-inner">
+                <div class="role-stack-line">
+                  <span>Python</span>
+                  <span>Django</span>
+                  <span>Responsive Web UI</span>
+                  <span>Agile</span>
+                </div>
+                <ul class="editorial-list">
+                  <li><strong>Excelled</strong> in the creation of application components utilizing advanced programming techniques within an <strong>Agile</strong> framework, resulting in the timely delivery of high-quality software solutions.</li>
+                  <li><strong>Developed</strong> responsive and user-centric web interfaces with <strong>Python</strong> and <strong>Django</strong>, improving user experience and contributing to a <strong>20%</strong> increase in development efficiency through proactive involvement in code testing.</li>
+                </ul>
+              </div>
             </div>
           </article>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Contact & Resume Download Section -->
-    <section class="section contact-section" id="contact">
-      <div class="container">
-        <div class="contact-banner">
-          <div class="contact-copy">
-            <span class="section-eyebrow">Let's Connect</span>
-            <h2>Interested in working together?</h2>
-            <p>
-              Whether you're scaling full-stack cloud applications, building production AI agents, or modernizing Kubernetes platforms—feel free to reach out directly or grab a copy of my latest resume.
+      <!-- 03 / SELECTED SYSTEMS -->
+      <section class="chapter reveal" id="systems">
+        <div class="chapter-kicker">
+          <span class="kicker-num">03</span>
+          <span class="kicker-rule" aria-hidden="true"></span>
+          <span class="kicker-title">SELECTED AI &amp; FULL STACK SYSTEMS</span>
+        </div>
+
+        <!-- Flagship System with Interactive Pipeline Stage Inspector -->
+        <article class="system-feature">
+          <div class="system-meta-row">
+            <span class="mono-tag">FIG. 3.1 — PRODUCTION APPLIED AI</span>
+            <span class="mono-tag">9 KUBERNETES CLUSTERS</span>
+          </div>
+          <h3 class="system-heading">Autonomous Multi-Cluster AI SRE &amp; Incident RCA Agent</h3>
+          <p class="system-copy">
+            An event-driven production AI agent integrated with Slack alert streams and observability APIs across nine Kubernetes clusters—automating runbook lookup, metric and log correlation, Kafka consumer lag inspection, and probable Root Cause Analysis synthesis for Operations engineers.
+          </p>
+
+          <!-- Fluid Interactive Architecture Flow -->
+          <div class="pipeline-explorer" aria-label="Interactive Agent Pipeline">
+            <div class="pipeline-steps" role="tablist">
+              <button type="button" class="pipe-node active" data-step="0" role="tab" aria-selected="true">
+                <span class="pipe-idx">01</span>
+                <span class="pipe-name">Alert Ingestion</span>
+              </button>
+              <button type="button" class="pipe-node" data-step="1" role="tab" aria-selected="false">
+                <span class="pipe-idx">02</span>
+                <span class="pipe-name">Runbook RAG</span>
+              </button>
+              <button type="button" class="pipe-node" data-step="2" role="tab" aria-selected="false">
+                <span class="pipe-idx">03</span>
+                <span class="pipe-name">Multi-Tool Telemetry</span>
+              </button>
+              <button type="button" class="pipe-node" data-step="3" role="tab" aria-selected="false">
+                <span class="pipe-idx">04</span>
+                <span class="pipe-name">RCA Synthesis</span>
+              </button>
+            </div>
+            <p class="pipeline-detail" id="pipeline-detail">
+              Continuously listens to <strong>IBM Instana</strong> anomaly events and <strong>Slack</strong> operational alert channels across 9 production clusters to trigger zero-touch first-response triage.
             </p>
-            <div class="contact-links">
-              <a href="mailto:skpatel0211@gmail.com" class="contact-direct">skpatel0211@gmail.com</a>
-              <span class="pill-sep">•</span>
-              <a href="tel:+17816008208" class="contact-direct">(781) 600-8208</a>
-              <span class="pill-sep">•</span>
-              <span>Greater Boston Area, MA</span>
+          </div>
+
+          <div class="system-stack">
+            <span>Python</span>
+            <span>LLM Tool Calling</span>
+            <span>RAG</span>
+            <span>Kubernetes</span>
+            <span>Apache Kafka</span>
+            <span>OpenSearch</span>
+            <span>IBM Instana</span>
+          </div>
+        </article>
+
+        <!-- Secondary Systems Pair -->
+        <div class="systems-duo">
+          <article class="system-note">
+            <span class="mono-tag">FIG. 3.2 — FULL-STACK &amp; LLM WORKFLOWS</span>
+            <h3 class="system-subheading">Adaptive Routine &amp; Dynamic Scheduling Application</h3>
+            <p class="system-copy">
+              End-to-end web application combining dynamic scheduling algorithms, state-driven <strong>React / TypeScript</strong> interfaces, relational persistence, and <strong>LLM API</strong> workflows for real-time schedule optimization from user activity logs.
+            </p>
+            <div class="system-stack">
+              <span>React</span>
+              <span>TypeScript</span>
+              <span>Python REST APIs</span>
+              <span>LLM APIs</span>
+              <span>PostgreSQL</span>
+            </div>
+          </article>
+
+          <article class="system-note">
+            <span class="mono-tag">FIG. 3.3 — COMPUTER VISION INFERENCE</span>
+            <h3 class="system-subheading">Real-Time Facial Expression Recognition API</h3>
+            <p class="system-copy">
+              Real-time facial emotion detection and CNN classification pipeline in <strong>Python</strong> (Keras, OpenCV, Scikit-learn), exposing low-latency inference endpoints through a <strong>Flask REST API</strong> and interactive web client.
+            </p>
+            <div class="system-stack">
+              <span>Python</span>
+              <span>Flask REST API</span>
+              <span>OpenCV &amp; Keras</span>
+              <span>Scikit-learn</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 04 / CAPABILITIES -->
+      <section class="chapter reveal" id="capabilities">
+        <div class="chapter-header-row">
+          <div class="chapter-kicker">
+            <span class="kicker-num">04</span>
+            <span class="kicker-rule" aria-hidden="true"></span>
+            <span class="kicker-title">TECHNICAL CAPABILITIES</span>
+          </div>
+
+          <div class="domain-pills" role="tablist" aria-label="Highlight technical domain">
+            <button type="button" class="domain-pill active" data-domain="all">All</button>
+            <button type="button" class="domain-pill" data-domain="ai">Applied AI</button>
+            <button type="button" class="domain-pill" data-domain="fullstack">Full-Stack</button>
+            <button type="button" class="domain-pill" data-domain="cloud">Cloud &amp; K8s</button>
+            <button type="button" class="domain-pill" data-domain="data">Data &amp; SRE</button>
+          </div>
+        </div>
+
+        <div class="capabilities-table" id="capabilities-table">
+          <div class="cap-row" data-cap="ai">
+            <div class="cap-label">AI &amp; Agentic Systems</div>
+            <div class="cap-items">
+              <em>Autonomous AI Agents</em>, <em>Tool Calling &amp; Orchestration</em>, <em>Retrieval-Augmented Generation (RAG)</em>, OpenAI / Gemini / Claude APIs, Automated Incident RCA Workflows, Computer Vision &amp; ML Pipelines
             </div>
           </div>
 
-          <div class="contact-actions">
-            <a href="./downloads/smit_patel.pdf" download="Smit_Patel_Resume.pdf" class="btn btn-primary">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                <polyline points="7 10 12 15 17 10"></polyline>
-                <line x1="12" y1="15" x2="12" y2="3"></line>
-              </svg>
-              <span>Download PDF Resume</span>
-            </a>
-            <a href="./downloads/SMIT_PATEL.docx" download="Smit_Patel_Resume.docx" class="btn btn-secondary">
-              <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-              </svg>
-              <span>Download DOCX Resume</span>
-            </a>
-            <div class="contact-social-row">
-              <a href="https://www.linkedin.com/in/smit999" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">LinkedIn ↗</a>
-              <a href="https://github.com/smit999" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm">GitHub ↗</a>
+          <div class="cap-row" data-cap="fullstack">
+            <div class="cap-label">Languages &amp; Frontend</div>
+            <div class="cap-items">
+              <em>Python</em>, <em>TypeScript</em>, JavaScript (ES6+), <em>Java</em>, C#, SQL, Bash, <em>React.js</em>, HTML5, CSS3, Responsive UI/UX Architecture
+            </div>
+          </div>
+
+          <div class="cap-row" data-cap="fullstack">
+            <div class="cap-label">Backend &amp; APIs</div>
+            <div class="cap-items">
+              <em>FastAPI</em>, <em>Flask</em>, <em>Django</em>, <em>Spring Boot</em>, Node.js, .NET, Synchronous &amp; Asynchronous RESTful APIs, Microservices Architecture, GraphQL, OAuth 2.0 / OIDC
+            </div>
+          </div>
+
+          <div class="cap-row" data-cap="cloud">
+            <div class="cap-label">Cloud, K8s &amp; DevSecOps</div>
+            <div class="cap-items">
+              <em>AWS</em> (EC2, S3, Lambda, RDS, IAM), Microsoft Azure (AZ-900 Certified), <em>Kubernetes (K8s)</em>, Docker, <em>Kyverno Policy Governance</em>, VPC Infrastructure, GitOps, Terraform, GitHub Actions, Jenkins, Linux
+            </div>
+          </div>
+
+          <div class="cap-row" data-cap="data">
+            <div class="cap-label">Data &amp; Observability</div>
+            <div class="cap-items">
+              PostgreSQL, MySQL, SQL Server, Snowflake, Redis, <em>Apache Kafka</em>, <em>OpenSearch</em>, <em>IBM Instana APM</em>, Apache Airflow, Custom Telemetry &amp; Delay Dashboards
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>&copy; <span id="year">2026</span> Smit Patel. Engineered for speed, accessibility &amp; zero-fragility GitHub Pages deployment.</p>
-      <div class="footer-links">
-        <a href="./downloads/smit_patel.pdf" target="_blank" rel="noopener noreferrer">PDF Resume</a>
-        <a href="./downloads/SMIT_PATEL.docx" download="Smit_Patel_Resume.docx">DOCX Resume</a>
-        <a href="https://www.linkedin.com/in/smit999" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="https://github.com/smit999" target="_blank" rel="noopener noreferrer">GitHub</a>
-      </div>
-    </div>
-  </footer>
+      <!-- 05 / EDUCATION & CREDENTIALS -->
+      <section class="chapter reveal" id="education">
+        <div class="chapter-kicker">
+          <span class="kicker-num">05</span>
+          <span class="kicker-rule" aria-hidden="true"></span>
+          <span class="kicker-title">EDUCATION &amp; CREDENTIALS</span>
+        </div>
+
+        <div class="edu-ledger">
+          <div class="edu-row">
+            <div class="edu-period">Dec 2021</div>
+            <div class="edu-main">
+              <h3>University of Massachusetts Boston</h3>
+              <p>Master of Science (M.S.) in Computer Science · <strong>GPA 3.8 / 4.0</strong></p>
+            </div>
+            <div class="edu-loc">Boston, MA</div>
+          </div>
+
+          <div class="edu-row">
+            <div class="edu-period">2017</div>
+            <div class="edu-main">
+              <h3>LDRP Institute of Technology &amp; Research</h3>
+              <p>Bachelor of Engineering (B.E.) in Computer Engineering · <strong>GPA 3.5 / 4.0</strong></p>
+            </div>
+            <div class="edu-loc">Gandhinagar, IN</div>
+          </div>
+
+          <div class="edu-row">
+            <div class="edu-period">AZ-900</div>
+            <div class="edu-main">
+              <h3>Microsoft Certified: Azure Fundamentals</h3>
+              <p>Cloud Architecture, Security, Identity &amp; Governance</p>
+            </div>
+            <div class="edu-loc">Credential</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Editorial Colophon / Footer -->
+      <footer class="colophon reveal">
+        <div class="colophon-top">
+          <div>
+            <p class="colophon-heading">Available for meaningful engineering conversations.</p>
+            <p class="colophon-sub">
+              Reach out directly at <a href="mailto:skpatel0211@gmail.com">skpatel0211@gmail.com</a> or grab the print-formatted resume dossier.
+            </p>
+          </div>
+          <div class="colophon-ctas">
+            <a href="./downloads/smit_patel.pdf" download="Smit_Patel_Resume.pdf" class="btn-editorial-primary">
+              <span>Resume PDF</span>
+              <span aria-hidden="true">↓</span>
+            </a>
+            <a href="./downloads/SMIT_PATEL.docx" download="Smit_Patel_Resume.docx" class="btn-editorial-ghost">
+              DOCX ↓
+            </a>
+          </div>
+        </div>
+        <div class="colophon-bottom">
+          <span>&copy; <span id="year">2026</span> Smit Patel · West Bridgewater / Greater Boston, MA</span>
+          <a href="#top" class="back-top">Back to top ↑</a>
+        </div>
+      </footer>
+    </main>
+  </div>
 
   <script src="./assets/js/main.js"></script>
 </body>
