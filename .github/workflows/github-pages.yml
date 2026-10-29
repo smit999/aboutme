@@ -1,37 +1,49 @@
-name: Build and Deploy to GitHub Pages
+name: Deploy Static Portfolio to GitHub Pages
 
 on:
   push:
     branches:
-      - main  # Change if your default branch is different
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
-  build-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.1'  # Use a supported Ruby version
-
-      - name: Install Dependencies
+      - name: Validate Static Assets & Resume Downloads
         run: |
-          gem install bundler
-          bundle config set path 'vendor/bundle'
-          echo "source 'https://rubygems.org'" > Gemfile
-          echo "gem 'github-pages', group: :jekyll_plugins" >> Gemfile
-          bundle install
+          set -euo pipefail
+          test -f index.html
+          test -f .nojekyll
+          test -s assets/css/styles.css
+          test -s assets/js/main.js
+          test -s downloads/smit_patel.pdf
+          test -s downloads/SMIT_PATEL.docx
 
-      - name: Build the Site
-        run: bundle exec jekyll build --destination ./build
+          # Ensure no root-relative /downloads/ URLs exist (prevents subpath 404s on GitHub Project Pages)
+          if grep -Eq 'href="/downloads/' index.html; then
+            echo "Error: Found root-relative /downloads/ link in index.html. Use ./downloads/ instead."
+            exit 1
+          fi
+          echo "All static assets and downloadable resume files verified."
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Assemble Clean Distribution Directory
+        run: |
+          mkdir -p dist
+          cp index.html .nojekyll dist/
+          cp -r assets downloads dist/
+
+      - name: Publish to gh-pages Branch
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
+          publish_dir: ./dist
           publish_branch: gh-pages
+          force_orphan: true
