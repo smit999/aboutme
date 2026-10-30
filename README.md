@@ -19,12 +19,12 @@ Personal developer portfolio and downloadable technical resume for **Smit Patel*
 ├── .github/workflows/
 │   └── github-pages.yml      # Validates static assets & deploys to gh-pages
 ├── assets/
-│   ├── css/styles.css        # Split Monograph × Editorial Print fluid design system
+│   ├── css/styles.css        # Clean Technical Grid design system (Space Grotesk + Plus Jakarta Sans + JetBrains Mono)
 │   ├── img/
 │   │   ├── avatar.png        # Cleaned portrait headshot
 │   │   ├── favicon.png       # Circular browser tab icon
 │   │   └── og-thumbnail.png  # 1200×630 Open Graph / social link preview card
-│   └── js/main.js            # Paper/Ink theme, gliding chapter nav, fluid drawers & pipeline
+│   └── js/main.js            # Light/Dark theme, live skill highlighter, spotlight sheen & scroll-spy nav
 ├── downloads/
 │   ├── smit_patel.pdf        # ATS-optimized PDF resume
 │   └── SMIT_PATEL.docx       # ATS-optimized Word (.docx) resume
