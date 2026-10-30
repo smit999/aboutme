@@ -720,6 +720,7 @@ input {
   font-size: 0.89rem;
   font-weight: 600;
   color: var(--text-strong);
+  background: var(--bg-subtle);
   background: color-mix(in srgb, var(--bg-subtle) 50%, var(--bg-surface));
 }
 
@@ -815,6 +816,7 @@ input {
   flex-direction: column;
   align-items: flex-start;
   gap: 5px;
+  background: var(--bg-subtle);
   background: color-mix(in srgb, var(--bg-subtle) 42%, var(--bg-surface));
 }
 

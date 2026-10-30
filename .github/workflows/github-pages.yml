@@ -42,6 +42,8 @@ jobs:
           mkdir -p dist
           cp index.html .nojekyll dist/
           cp -r assets downloads dist/
+          SHORT_SHA="${GITHUB_SHA::8}"
+          sed -i "s/?v=3\.0\.0/?v=${SHORT_SHA}/g" dist/index.html
 
       - name: Publish to gh-pages Branch
         uses: peaceiris/actions-gh-pages@v4
