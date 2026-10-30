@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smit Patel — Full Stack &amp; Applied AI Software Engineer</title>
+  <meta name="description" content="Smit Patel — Full Stack &amp; Applied AI Software Engineer with 7+ years of experience across IBM, Optum, Tesla, and fintech building AI Agents, RAG workflows, Python/TypeScript/Java microservices, and Kubernetes cloud platforms." />
+  <meta name="author" content="Smit Patel" />
+
+  <!-- Open Graph / Social Link Preview Thumbnail -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://smit999.github.io/aboutme/" />
+  <meta property="og:title" content="Smit Patel — Full Stack &amp; Applied AI Software Engineer" />
+  <meta property="og:description" content="7+ years engineering distributed Python, TypeScript/React &amp; Java systems, production AI Agents across 9 Kubernetes clusters at IBM, and cloud platforms at Optum &amp; Tesla." />
+  <meta property="og:image" content="https://smit999.github.io/aboutme/assets/img/og-thumbnail.png?v=3fc8354f" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Smit Patel — Full Stack &amp; Applied AI Software Engineer" />
+  <meta name="twitter:description" content="Full Stack &amp; Applied AI Software Engineer (IBM • Optum • Tesla)." />
+  <meta name="twitter:image" content="https://smit999.github.io/aboutme/assets/img/og-thumbnail.png?v=3fc8354f" />
+
+  <!-- Browser Tab Thumbnail / Favicon -->
+  <link rel="icon" type="image/png" href="./assets/img/favicon.png?v=3fc8354f" />
+  <link rel="apple-touch-icon" href="./assets/img/avatar.png?v=3fc8354f" />
+
+  <!-- Modern Engineering Typography: Space Grotesk + Plus Jakarta Sans + JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="./assets/css/styles.css?v=3fc8354f" />
+
+  <!-- Prevent theme flash -->
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('sp-grid-theme');
+        if (saved === 'light' || saved === 'dark') {
+          document.documentElement.setAttribute('data-theme', saved);
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Smit Patel",
+    "jobTitle": "Full Stack & Applied AI Software Engineer",
+    "image": "https://smit999.github.io/aboutme/assets/img/avatar.png",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Greater Boston Area",
+      "addressRegion": "MA",
+      "addressCountry": "US"
+    },
+    "email": "mailto:skpatel0211@gmail.com",
+    "telephone": "+1-781-600-8208",
+    "sameAs": [
+      "https://www.linkedin.com/in/smit999",
+      "https://github.com/smit999"
+    ],
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "University of Massachusetts Boston"
+    },
+    "worksFor": {
+      "@type": "Organization",
+      "name": "IBM"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- Reading Progress Bar -->
+  <div class="progress-line" id="progress-line" aria-hidden="true"></div>
+
+  <!-- Sticky Architectural Top Navigation -->
+  <header class="topbar" id="top">
+    <div class="topbar-inner">
+      <a href="#top" class="nav-brand">
+        <img src="./assets/img/avatar.png?v=3fc8354f" alt="Smit Patel" width="30" height="30" class="nav-avatar" />
+        <span class="nav-brand-name">Smit Patel</span>
+        <span class="nav-status-pill">
+          <span class="pulse-dot" aria-hidden="true"></span>
+          <span>SWE @ IBM</span>
+        </span>
+      </a>
+
+      <nav class="nav-links" id="nav-links" aria-label="Section Navigation">
+        <a href="#about" class="nav-item active">About</a>
+        <a href="#skills" class="nav-item">Skills</a>
+        <a href="#experience" class="nav-item">Experience</a>
+        <a href="#projects" class="nav-item">Projects</a>
+        <a href="#education" class="nav-item">Education</a>
+      </nav>
+
+      <div class="nav-controls">
+        <button type="button" class="theme-btn" id="theme-toggle" aria-label="Toggle color theme" title="Toggle Light / Dark theme">
+          <svg class="ic-moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg class="ic-sun" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+          </svg>
+        </button>
+
+        <a href="./downloads/smit_patel.pdf" download="Smit_Patel_Resume.pdf" class="btn btn-cobalt btn-sm">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <span>Resume PDF</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Architectural Technical Grid Container -->
+  <main class="grid-frame">
+
+    <!-- ===================================================================
+         SECTION 00: HERO IDENTITY & SUMMARY
+         =================================================================== -->
+    <section class="grid-block hero-block" id="about">
+      <span class="crosshair ch-tl" aria-hidden="true"></span>
+      <span class="crosshair ch-tr" aria-hidden="true"></span>
+
+      <div class="hero-dot-bg" aria-hidden="true"></div>
+
+      <div class="hero-layout">
+        <!-- Portrait Column -->
+        <div class="hero-portrait-col">
+          <div class="portrait-shell">
+            <img src="./assets/img/avatar.png?v=3fc8354f" alt="Smit Patel — Full Stack &amp; Applied AI Software Engineer" width="144" height="144" class="hero-portrait" />
+            <span class="portrait-ring" aria-hidden="true"></span>
+          </div>
+        </div>
+
+        <!-- Straightforward Identity & Summary Column -->
+        <div class="hero-info-col">
+          <div class="eyebrow-row">
+            <span class="mono-badge badge-live">
+              <span class="pulse-dot" aria-hidden="true"></span>
+              Software Developer @ IBM
+            </span>
+            <span class="mono-badge">Greater Boston, MA</span>
+            <span class="mono-badge">US Citizen</span>
+          </div>
+
+          <h1 class="hero-name">Smit Patel</h1>
+          <p class="hero-headline">
+            Full Stack &amp; Applied AI Software Engineer
+            <span class="headline-stack">Python · TypeScript · React · Java · AWS · Kubernetes</span>
+          </p>
+
+          <p class="hero-bio">
+            <strong>Full Stack Software Engineer</strong> with <strong>7+ years</strong> of experience designing, building, and scaling enterprise web applications, distributed backend microservices, and automated cloud infrastructure across <strong>IBM</strong>, <strong>Optum</strong>, <strong>Tesla</strong>, and fintech environments. Proven end-to-end ownership across <strong>Python (FastAPI, Flask, Django)</strong>, <strong>TypeScript / React</strong>, and <strong>Java (Spring Boot)</strong> on <strong>AWS</strong> and <strong>Kubernetes</strong>—including architecting an autonomous multi-cluster <strong>AI Incident Triage &amp; Root Cause Analysis (RCA) Agent</strong> deployed across <strong>9 production Kubernetes clusters</strong> at IBM alongside zero-downtime VPC migrations and GitOps governance.
+          </p>
+
+          <!-- Action & Contact Bar -->
+          <div class="hero-actions-bar">
+            <div class="resume-btn-group">
+              <a href="./downloads/smit_patel.pdf" download="Smit_Patel_Resume.pdf" class="btn btn-cobalt">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <span>Download Resume (PDF)</span>
+              </a>
+              <a href="./downloads/smit_patel.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                <span>View PDF</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+              <a href="./downloads/SMIT_PATEL.docx" download="Smit_Patel_Resume.docx" class="btn btn-outline" title="Download Microsoft Word (.docx) format">
+                <span>DOCX ↓</span>
+              </a>
+            </div>
+
+            <div class="contact-strip">
+              <button type="button" class="contact-pill" id="copy-email-btn" data-email="skpatel0211@gmail.com" title="Click to copy email">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                </svg>
+                <span>skpatel0211@gmail.com</span>
+                <span class="copy-tag" id="copy-tag">Copy</span>
+              </button>
+
+              <a href="tel:+17816008208" class="contact-pill">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.58 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+                <span>(781) 600-8208</span>
+              </a>
+
+              <a href="https://www.linkedin.com/in/smit999" target="_blank" rel="noopener noreferrer" class="contact-pill">
+                <span>LinkedIn</span>
+                <span class="ext-arr" aria-hidden="true">↗</span>
+              </a>
+
+              <a href="https://github.com/smit999" target="_blank" rel="noopener noreferrer" class="contact-pill">
+                <span>GitHub</span>
+                <span class="ext-arr" aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         METRICS GRID STRIP (4 Architectural Cells)
+         =================================================================== -->
+    <section class="metrics-bar" aria-label="Key Engineering Metrics">
+      <span class="crosshair ch-tl" aria-hidden="true"></span>
+      <span class="crosshair ch-tr" aria-hidden="true"></span>
+
+      <div class="metric-cell spotlight-card">
+        <div class="metric-num">7+<span> yrs</span></div>
+        <div class="metric-title">Enterprise Engineering</div>
+        <div class="metric-sub">IBM · Optum · Tesla · Fintech</div>
+      </div>
+
+      <div class="metric-cell spotlight-card">
+        <div class="metric-num">9<span> clusters</span></div>
+        <div class="metric-title">Prod AI SRE Agent</div>
+        <div class="metric-sub">Autonomous RAG &amp; RCA @ IBM</div>
+      </div>
+
+      <div class="metric-cell spotlight-card">
+        <div class="metric-num">-50<span>%</span></div>
+        <div class="metric-title">Deployment Cycle Time</div>
+        <div class="metric-sub">K8s &amp; Docker CI/CD @ Tesla</div>
+      </div>
+
+      <div class="metric-cell spotlight-card">
+        <div class="metric-num">3.8<span> GPA</span></div>
+        <div class="metric-title">M.S. Computer Science</div>
+        <div class="metric-sub">UMass Boston · Azure AZ-900</div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 01: TECHNICAL SKILLS MATRIX
+         =================================================================== -->
+    <section class="grid-block" id="skills">
+      <span class="crosshair ch-tl" aria-hidden="true"></span>
+      <span class="crosshair ch-tr" aria-hidden="true"></span>
+
+      <div class="section-bar">
+        <div class="section-title-wrap">
+          <span class="sec-index">01</span>
+          <h2 class="sec-heading">Technical Skills</h2>
+        </div>
+
+        <div class="skill-search-wrap">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="skill-filter-input" class="skill-search-input" placeholder="Highlight skill (e.g. Python, K8s, RAG)..." aria-label="Highlight skill across page" />
+          <kbd class="search-kbd" id="clear-filter-kbd" title="Press / to focus or click to clear">/</kbd>
+        </div>
+      </div>
+
+      <div class="skills-matrix" id="skills-matrix">
+        <div class="matrix-row">
+          <div class="matrix-cat">
+            <span class="cat-dot dot-cobalt"></span>
+            <span>AI &amp; Agentic Engineering</span>
+          </div>
+          <div class="matrix-pills">
+            <button type="button" class="skill-chip core" data-kw="AI">Autonomous AI Agents</button>
+            <button type="button" class="skill-chip core" data-kw="RAG">Retrieval-Augmented Generation (RAG)</button>
+            <button type="button" class="skill-chip core" data-kw="tool-calling">Tool Calling &amp; Orchestration</button>
+            <button type="button" class="skill-chip" data-kw="LLM">OpenAI / Gemini / Claude APIs</button>
+            <button type="button" class="skill-chip" data-kw="RCA">Automated Incident RCA Workflows</button>
+            <button type="button" class="skill-chip" data-kw="OpenCV">Computer Vision &amp; ML Pipelines</button>
+          </div>
+        </div>
+
+        <div class="matrix-row">
+          <div class="matrix-cat">
+            <span class="cat-dot dot-emerald"></span>
+            <span>Languages &amp; Frontend</span>
+          </div>
+          <div class="matrix-pills">
+            <button type="button" class="skill-chip core" data-kw="Python">Python</button>
+            <button type="button" class="skill-chip core" data-kw="TypeScript">TypeScript</button>
+            <button type="button" class="skill-chip core" data-kw="React">React.js</button>
+            <button type="button" class="skill-chip" data-kw="JavaScript">JavaScript (ES6+)</button>
+            <button type="button" class="skill-chip core" data-kw="Java">Java</button>
+            <button type="button" class="skill-chip" data-kw="C#">C#</button>
+            <button type="button" class="skill-chip" data-kw="SQL">SQL</button>
+            <button type="button" class="skill-chip" data-kw="Linux">Bash</button>
+            <button type="button" class="skill-chip" data-kw="UI">HTML5 &amp; CSS3</button>
+            <button type="button" class="skill-chip" data-kw="UI">Responsive UI/UX Architecture</button>
+          </div>
+        </div>
+
+        <div class="matrix-row">
+          <div class="matrix-cat">
+            <span class="cat-dot dot-indigo"></span>
+            <span>Backend &amp; Distributed APIs</span>
+          </div>
+          <div class="matrix-pills">
+            <button type="button" class="skill-chip core" data-kw="Python">FastAPI</button>
+            <button type="button" class="skill-chip core" data-kw="Flask">Flask</button>
+            <button type="button" class="skill-chip core" data-kw="Django">Django</button>
+            <button type="button" class="skill-chip core" data-kw="Spring Boot">Spring Boot</button>
+            <button type="button" class="skill-chip" data-kw="Node.js">Node.js</button>
+            <button type="button" class="skill-chip" data-kw=".NET">.NET</button>
+            <button type="button" class="skill-chip" data-kw="REST">Sync &amp; Async RESTful APIs</button>
+            <button type="button" class="skill-chip" data-kw="microservices">Microservices Architecture</button>
+            <button type="button" class="skill-chip" data-kw="GraphQL">GraphQL</button>
+            <button type="button" class="skill-chip" data-kw="OAuth">OAuth 2.0 / OIDC / JWT</button>
+          </div>
+        </div>
+
+        <div class="matrix-row">
+          <div class="matrix-cat">
+            <span class="cat-dot dot-sky"></span>
+            <span>Cloud, Kubernetes &amp; DevSecOps</span>
+          </div>
+          <div class="matrix-pills">
+            <button type="button" class="skill-chip core" data-kw="AWS">AWS (EC2, S3, Lambda, RDS, IAM)</button>
+            <button type="button" class="skill-chip core" data-kw="Kubernetes">Kubernetes (K8s)</button>
+            <button type="button" class="skill-chip" data-kw="Docker">Docker</button>
+            <button type="button" class="skill-chip core" data-kw="Kyverno">Kyverno Policy Governance</button>
+            <button type="button" class="skill-chip" data-kw="VPC">VPC Infrastructure</button>
+            <button type="button" class="skill-chip" data-kw="GitOps">GitOps</button>
+            <button type="button" class="skill-chip" data-kw="Infrastructure">Terraform</button>
+            <button type="button" class="skill-chip" data-kw="GitHub Actions">GitHub Actions &amp; Jenkins</button>
+            <button type="button" class="skill-chip" data-kw="Azure">Microsoft Azure (AZ-900)</button>
+            <button type="button" class="skill-chip" data-kw="Linux">Linux</button>
+          </div>
+        </div>
+
+        <div class="matrix-row">
+          <div class="matrix-cat">
+            <span class="cat-dot dot-amber"></span>
+            <span>Data, Messaging &amp; Observability</span>
+          </div>
+          <div class="matrix-pills">
+            <button type="button" class="skill-chip core" data-kw="Kafka">Apache Kafka</button>
+            <button type="button" class="skill-chip core" data-kw="OpenSearch">OpenSearch</button>
+            <button type="button" class="skill-chip core" data-kw="Instana">IBM Instana APM</button>
+            <button type="button" class="skill-chip" data-kw="PostgreSQL">PostgreSQL</button>
+            <button type="button" class="skill-chip" data-kw="MySQL">MySQL</button>
+            <button type="button" class="skill-chip" data-kw="SQL">SQL Server</button>
+            <button type="button" class="skill-chip" data-kw="Snowflake">Snowflake</button>
+            <button type="button" class="skill-chip" data-kw="Redis">Redis</button>
+            <button type="button" class="skill-chip" data-kw="Airflow">Apache Airflow</button>
+            <button type="button" class="skill-chip" data-kw="dashboards">Custom Telemetry &amp; Delay Dashboards</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 02: PROFESSIONAL EXPERIENCE (All Roles Open & Scannable)
+         =================================================================== -->
+    <section class="grid-block" id="experience">
+      <span class="crosshair ch-tl" aria-hidden="true"></span>
+      <span class="crosshair ch-tr" aria-hidden="true"></span>
+
+      <div class="section-bar">
+        <div class="section-title-wrap">
+          <span class="sec-index">02</span>
+          <h2 class="sec-heading">Professional Experience</h2>
+        </div>
+        <span class="sec-caption">5 Roles · 2017 — Present</span>
+      </div>
+
+      <div class="exp-grid-list">
+        <!-- IBM -->
+        <article class="exp-row current-exp searchable-block spotlight-card">
+          <div class="exp-aside">
+            <div class="exp-company-badge badge-ibm">IBM</div>
+            <div class="exp-dates">Nov 2024 — Present</div>
+            <div class="exp-loc">Lowell, MA</div>
+            <span class="exp-live-tag">● Current Role</span>
+          </div>
+
+          <div class="exp-content">
+            <div class="exp-head">
+              <h3 class="exp-company">IBM</h3>
+              <span class="exp-divider">/</span>
+              <span class="exp-role">Software Developer</span>
+            </div>
+
+            <div class="exp-tags">
+              <span>AI Agents</span>
+              <span>RAG</span>
+              <span>Kubernetes (9 Clusters)</span>
+              <span>Instana APM</span>
+              <span>Apache Kafka</span>
+              <span>OpenSearch</span>
+              <span>Kyverno</span>
+              <span>VPC</span>
+              <span>GitOps</span>
+              <span>Python &amp; Node.js</span>
+            </div>
+
+            <ul class="exp-bullets">
+              <li><strong>Architected and scaled</strong> an autonomous <strong>AI Incident Triage &amp; Root Cause Analysis (RCA) Agent</strong> across <strong>9 production Kubernetes clusters</strong>, continuously monitoring <strong>Instana</strong> events and <strong>Slack</strong> alert channels to automate first-response diagnostics for SRE and Operations teams.</li>
+              <li><strong>Engineered</strong> multi-source agentic tool-calling and runbook retrieval (<strong>RAG</strong>) workflows that automatically cross-reference internal <strong>wiki runbooks</strong> against live <strong>Instana APM metrics</strong>, custom delay dashboards, <strong>Apache Kafka</strong> consumer lag monitors, <strong>Kubernetes</strong> pod/deployment health, and <strong>OpenSearch</strong> logs to synthesize probable RCAs and drastically reduce manual operational triage toil.</li>
+              <li><strong>Executed</strong> live production cluster migrations from classic infrastructure to <strong>VPC infrastructure</strong>, modernizing the cloud network architecture while maintaining high availability for mission-critical workloads.</li>
+              <li><strong>Implemented</strong> custom <strong>Kyverno</strong> security, compliance, and admission-control policies across <strong>7 production Kubernetes clusters</strong>, enforcing standardized deployment quality gates across engineering squads.</li>
+              <li><strong>Manage</strong> Kubernetes <strong>GitOps</strong> workflows, cloud infrastructure, and production operations within a 5-engineer core platform squad supporting <strong>9 sister engineering teams</strong> under the SIP umbrella.</li>
+              <li><strong>Develop</strong> and maintain backend microservices, asynchronous REST APIs, and automated <strong>CI/CD</strong> pipelines using <strong>Python</strong>, <strong>Node.js</strong>, <strong>Docker</strong>, and <strong>GitHub Actions</strong>.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Optum -->
+        <article class="exp-row searchable-block spotlight-card">
+          <div class="exp-aside">
+            <div class="exp-company-badge">UHG</div>
+            <div class="exp-dates">Jan 2023 — Nov 2024</div>
+            <div class="exp-loc">Boston, MA</div>
+          </div>
+
+          <div class="exp-content">
+            <div class="exp-head">
+              <h3 class="exp-company">Optum <span class="company-parent">(UnitedHealth Group)</span></h3>
+              <span class="exp-divider">/</span>
+              <span class="exp-role">Software Engineer</span>
+            </div>
+
+            <div class="exp-tags">
+              <span>Python Microservices</span>
+              <span>Java Spring Boot</span>
+              <span>Snowflake</span>
+              <span>AWS &amp; Azure</span>
+              <span>Infrastructure as Code</span>
+              <span>GitHub Actions</span>
+            </div>
+
+            <ul class="exp-bullets">
+              <li><strong>Delivered</strong> an impactful presentation to a 150-member Data Science Guild, showcasing the utilization of a DCE environment for provisional <strong>Azure Cloud</strong> and <strong>AWS</strong> setups, thereby facilitating R&amp;D in novel data science techniques within Optum.</li>
+              <li><strong>Developed</strong> <strong>Python</strong>-based <strong>microservices</strong> to orchestrate <strong>Snowflake</strong> resources for internal tenants, facilitating <strong>CRUD operations</strong> on the platform.</li>
+              <li><strong>Successfully elevated</strong> a fellow Trainee Development Program (TDP) associate from a non-technical background to <strong>Java</strong> proficiency through dedicated mentorship, covering comprehensive OOP concepts and industry best practices, while simultaneously enhancing our team's project contributions.</li>
+              <li><strong>Spearheaded</strong> the development of resilient <strong>Java Spring Boot</strong> APIs and pioneered the integration of automated code quality checks using <strong>GitHub Actions</strong> within the PAAN application, substantially improving code reliability and deployment efficiency by <strong>20%</strong>.</li>
+              <li><strong>Innovated</strong> within the HCP platform by designing and executing PRM agent resources and <strong>Infrastructure as Code</strong>, significantly advancing operational effectiveness, and by architecting a new <strong>Snowflake</strong> tenancy model using <strong>Python</strong> that bolstered the adoption of <strong>CI/CD</strong> and DevOps practices, setting a new standard for project scalability and collaboration.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Tesla -->
+        <article class="exp-row searchable-block spotlight-card">
+          <div class="exp-aside">
+            <div class="exp-company-badge">TSLA</div>
+            <div class="exp-dates">Apr 2022 — Jan 2023</div>
+            <div class="exp-loc">Remote / Palo Alto, CA</div>
+          </div>
+
+          <div class="exp-content">
+            <div class="exp-head">
+              <h3 class="exp-company">Tesla, Inc.</h3>
+              <span class="exp-divider">/</span>
+              <span class="exp-role">Software Engineer (Python)</span>
+            </div>
+
+            <div class="exp-tags">
+              <span>Python 3</span>
+              <span>Django</span>
+              <span>Kubernetes</span>
+              <span>Docker</span>
+              <span>Jenkins &amp; GitHub Actions</span>
+              <span>OAuth 2.0 / OIDC</span>
+              <span>Node.js &amp; Akamai</span>
+              <span>MySQL &amp; PostgreSQL</span>
+            </div>
+
+            <ul class="exp-bullets">
+              <li><strong>Revolutionized</strong> the deployment process by constructing and deploying <strong>CI/CD</strong> pipelines with <strong>GitHub Actions</strong>, <strong>Jenkins</strong>, <strong>Docker</strong>, and <strong>Kubernetes</strong>, cutting deployment times by half and boosting overall productivity through streamlined and automated workflows.</li>
+              <li><strong>Led</strong> a critical system upgrade from <strong>Python 2.7 to Python 3</strong>, expertly transitioning databases from <strong>PostgreSQL</strong> to <strong>MySQL</strong> with strategic <strong>Linux</strong> SED scripting, thereby maintaining system integrity and enhancing security, and further secured application access by implementing <strong>OAuth 2.0</strong> and <strong>OIDC</strong> with <strong>Python 3</strong> and <strong>Django</strong> for reliable <strong>JWT</strong> handling and protected user authentication flows.</li>
+              <li><strong>Initiated</strong> the initiative to upgrade Tesla's Open edX <strong>Django</strong> application to <strong>Python 3</strong>, fortifying the educational platform's security and performance, and integrated dynamic content management with <strong>Node.js</strong> and <strong>Akamai Storage</strong> solutions, enabling efficient handling of over <strong>50</strong> remote learning modules.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Lendica -->
+        <article class="exp-row searchable-block spotlight-card">
+          <div class="exp-aside">
+            <div class="exp-company-badge">LND</div>
+            <div class="exp-dates">Feb 2021 — Oct 2021</div>
+            <div class="exp-loc">Boston, MA</div>
+          </div>
+
+          <div class="exp-content">
+            <div class="exp-head">
+              <h3 class="exp-company">Lendica, Inc.</h3>
+              <span class="exp-divider">/</span>
+              <span class="exp-role">Software Engineer</span>
+            </div>
+
+            <div class="exp-tags">
+              <span>Python</span>
+              <span>Apache Airflow 2.0</span>
+              <span>AWS S3 &amp; boto3</span>
+              <span>OAuth 2.0</span>
+              <span>PostgreSQL</span>
+              <span>Open-Source PyPI &amp; npm</span>
+            </div>
+
+            <ul class="exp-bullets">
+              <li><strong>Upgraded</strong> Lendica's Application Portal by engineering an advanced automation system with <strong>Python</strong> and <strong>OAuth 2.0</strong>, drastically improving the efficiency of third-party application integrations and streamlining the user experience.</li>
+              <li><strong>Designed</strong> and deployed a highly responsive data processing pipeline using <strong>Apache Airflow 2.0</strong>, enabling automated, condition-based triggering of <strong>REST API</strong> functions that accelerated data retrieval and updates within the <strong>AWS S3</strong> environment.</li>
+              <li><strong>Played</strong> a crucial role in forging a productive partnership with Terrayn, a top-tier Digital Marketing &amp; SEO firm, by co-developing an MIT-licensed <strong>Python pip package</strong> that supports Metrc compliance, complemented by an <strong>npm</strong> frontend package, significantly enhancing industry-standard regulatory adherence.</li>
+              <li><strong>Showcased</strong> extensive <strong>AWS</strong> proficiency by employing <strong>boto</strong> and <strong>boto3</strong> libraries to facilitate efficient cloud operations and crafted a secure <strong>OAuth 2.0</strong> authentication protocol for Lendica's front-facing platforms, incorporating automated backend token generation and <strong>PostgreSQL</strong> encryption to uphold high-security standards.</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Acespritech -->
+        <article class="exp-row searchable-block spotlight-card">
+          <div class="exp-aside">
+            <div class="exp-company-badge">ACE</div>
+            <div class="exp-dates">Oct 2017 — Sep 2019</div>
+            <div class="exp-loc">Gandhinagar, Gujarat, IN</div>
+          </div>
+
+          <div class="exp-content">
+            <div class="exp-head">
+              <h3 class="exp-company">Acespritech Pvt. Ltd.</h3>
+              <span class="exp-divider">/</span>
+              <span class="exp-role">Assoc. Software Developer</span>
+            </div>
+
+            <div class="exp-tags">
+              <span>Python</span>
+              <span>Django</span>
+              <span>Responsive Web UI</span>
+              <span>Agile</span>
+            </div>
+
+            <ul class="exp-bullets">
+              <li><strong>Excelled</strong> in the creation of application components utilizing advanced programming techniques within an <strong>Agile</strong> framework, resulting in the timely delivery of high-quality software solutions.</li>
+              <li><strong>Developed</strong> responsive and user-centric web interfaces with <strong>Python</strong> and <strong>Django</strong>, improving user experience and contributing to a <strong>20%</strong> increase in development efficiency through proactive involvement in code testing.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 03: SELECTED AI & FULL STACK PROJECTS
+         =================================================================== -->
+    <section class="grid-block" id="projects">
+      <span class="crosshair ch-tl" aria-hidden="true"></span>
+      <span class="crosshair ch-tr" aria-hidden="true"></span>
+
+      <div class="section-bar">
+        <div class="section-title-wrap">
+          <span class="sec-index">03</span>
+          <h2 class="sec-heading">Selected AI &amp; Full Stack Projects</h2>
+        </div>
+        <span class="sec-caption">Production Systems &amp; Applications</span>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Flagship Full-Width Project Card -->
+        <article class="proj-card proj-wide searchable-block spotlight-card">
+          <div class="proj-top">
+            <div class="proj-kicker">
+              <span class="proj-type">PRODUCTION APPLIED AI · SRE AUTOMATION</span>
+              <span class="proj-scale">9 K8S CLUSTERS</span>
+            </div>
+            <h3 class="proj-title">Autonomous Multi-Cluster AI SRE &amp; Incident RCA Agent</h3>
+            <p class="proj-desc">
+              Built an event-driven production <strong>AI agent</strong> integrated with <strong>Slack</strong> alerts and observability APIs across <strong>9 Kubernetes clusters</strong> to automate runbook lookup, metric/log correlation, <strong>Kafka</strong> lag inspection, and probable Root Cause Analysis (RCA) generation for Operations engineers.
+            </p>
+          </div>
+
+          <!-- Clean Visual Pipeline Diagram -->
+          <div class="arch-pipeline" aria-label="System Architecture Flow">
+            <div class="arch-step">
+              <span class="step-num">01</span>
+              <span class="step-label">Slack &amp; Instana Alerts</span>
+            </div>
+            <span class="arch-arrow" aria-hidden="true">→</span>
+            <div class="arch-step">
+              <span class="step-num">02</span>
+              <span class="step-label">Wiki Runbook RAG</span>
+            </div>
+            <span class="arch-arrow" aria-hidden="true">→</span>
+            <div class="arch-step">
+              <span class="step-num">03</span>
+              <span class="step-label">K8s + Kafka + OpenSearch</span>
+            </div>
+            <span class="arch-arrow" aria-hidden="true">→</span>
+            <div class="arch-step active-step">
+              <span class="step-num">04</span>
+              <span class="step-label">Automated RCA Brief</span>
+            </div>
+          </div>
+
+          <div class="exp-tags">
+            <span>Python</span>
+            <span>LLMs &amp; Tool Calling</span>
+            <span>RAG</span>
+            <span>Kubernetes</span>
+            <span>Apache Kafka</span>
+            <span>OpenSearch</span>
+            <span>IBM Instana</span>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="proj-card searchable-block spotlight-card">
+          <div>
+            <div class="proj-kicker">
+              <span class="proj-type">FULL-STACK WEB &amp; LLM WORKFLOWS</span>
+            </div>
+            <h3 class="proj-title">Adaptive Routine &amp; Dynamic Scheduling Full Stack Application</h3>
+            <p class="proj-desc">
+              Engineered an end-to-end full stack web application featuring dynamic scheduling algorithms, state-driven <strong>React / TypeScript</strong> UI components, relational persistence, and <strong>LLM API</strong> workflows for real-time schedule optimization from user activity logs.
+            </p>
+          </div>
+          <div class="exp-tags">
+            <span>React</span>
+            <span>TypeScript</span>
+            <span>Python REST APIs</span>
+            <span>LLM APIs</span>
+            <span>PostgreSQL</span>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="proj-card searchable-block spotlight-card">
+          <div>
+            <div class="proj-kicker">
+              <span class="proj-type">COMPUTER VISION &amp; ML INFERENCE</span>
+            </div>
+            <h3 class="proj-title">Real-Time Facial Expression Recognition &amp; Computer Vision API</h3>
+            <p class="proj-desc">
+              Implemented a real-time facial emotion detection and CNN classification ML pipeline in <strong>Python</strong>, exposing low-latency model inference endpoints via a <strong>Flask REST API</strong> integrated with an interactive web interface.
+            </p>
+          </div>
+          <div class="exp-tags">
+            <span>Python</span>
+            <span>Flask REST API</span>
+            <span>Keras &amp; OpenCV</span>
+            <span>Scikit-learn &amp; Pandas</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SECTION 04: EDUCATION & CERTIFICATIONS
+         =================================================================== -->
+    <section class="grid-block" id="education">
+      <span class="crosshair ch-tl" aria-hidden="true"></span>
+      <span class="crosshair ch-tr" aria-hidden="true"></span>
+      <span class="crosshair ch-bl" aria-hidden="true"></span>
+      <span class="crosshair ch-br" aria-hidden="true"></span>
+
+      <div class="section-bar">
+        <div class="section-title-wrap">
+          <span class="sec-index">04</span>
+          <h2 class="sec-heading">Education &amp; Certifications</h2>
+        </div>
+      </div>
+
+      <div class="edu-grid">
+        <article class="edu-cell spotlight-card">
+          <div class="edu-badge">M.S. · 2021</div>
+          <h3 class="edu-school">University of Massachusetts Boston</h3>
+          <p class="edu-deg">Master of Science in Computer Science</p>
+          <p class="edu-meta">Boston, MA · <strong>GPA: 3.8 / 4.0</strong></p>
+        </article>
+
+        <article class="edu-cell spotlight-card">
+          <div class="edu-badge">B.E. · 2017</div>
+          <h3 class="edu-school">LDRP Institute of Technology &amp; Research</h3>
+          <p class="edu-deg">Bachelor of Engineering in Computer Engineering</p>
+          <p class="edu-meta">Gandhinagar, Gujarat, IN · <strong>GPA: 3.5 / 4.0</strong></p>
+        </article>
+
+        <article class="edu-cell spotlight-card">
+          <div class="edu-badge badge-cert">AZ-900</div>
+          <h3 class="edu-school">Microsoft Certified: Azure Fundamentals</h3>
+          <p class="edu-deg">Cloud Concepts, Architecture, Security &amp; Governance</p>
+          <p class="edu-meta">Microsoft Cloud Certification</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         FOOTER / DIRECT DOWNLOAD & CONTACT BAR
+         =================================================================== -->
+    <footer class="footer-block">
+      <div class="footer-cta-row">
+        <div>
+          <h2 class="footer-title">Let’s build something reliable together.</h2>
+          <p class="footer-sub">
+            Reach out directly at <a href="mailto:skpatel0211@gmail.com">skpatel0211@gmail.com</a> or download a print-ready copy of my resume.
+          </p>
+        </div>
+        <div class="resume-btn-group">
+          <a href="./downloads/smit_patel.pdf" download="Smit_Patel_Resume.pdf" class="btn btn-cobalt">
+            <span>Download PDF</span>
+            <span aria-hidden="true">↓</span>
+          </a>
+          <a href="./downloads/SMIT_PATEL.docx" download="Smit_Patel_Resume.docx" class="btn btn-outline">
+            <span>Download DOCX</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; <span id="year">2026</span> Smit Patel · Greater Boston, MA</span>
+        <div class="footer-links">
+          <a href="./downloads/smit_patel.pdf" target="_blank" rel="noopener noreferrer">PDF Resume</a>
+          <a href="./downloads/SMIT_PATEL.docx" download="Smit_Patel_Resume.docx">DOCX Resume</a>
+          <a href="https://www.linkedin.com/in/smit999" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/smit999" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="#top">Top ↑</a>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="./assets/js/main.js?v=3fc8354f"></script>
+</body>
+</html>
